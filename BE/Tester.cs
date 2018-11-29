@@ -12,15 +12,16 @@ namespace BE
         string lastName; //{ get; set;}
         string firstName;
         string birth;
-        string gender;
+        _gender gender;
         string phone;
-        string address;
+        address adr;
         int experience;
         int maxTests;
-        string carType;
+        car_Type carType;
         bool[,] workHour = new bool[5, 6];
         int maxDist;
         //another properties by demand
+        gear_Box gearBox;
         override public string ToString()
         {
             return "";//assumption: returns any property of class as String

@@ -9,11 +9,11 @@ namespace BE
     public class Test
     {
         static int testId = Configuration.firstNum;
-        string testerId;
-        string traineeId;
-        string testDate;
+        int testerId;
+        int traineeId;
+        DateTime testDate;
         string dateAndHour; //the time for a test is always 1 hour
-        string testAddress;
+        address beginOfTestAdr;
         bool keepDis;
         bool reversePark;
         bool mirror;

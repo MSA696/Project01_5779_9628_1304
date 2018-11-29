@@ -12,12 +12,12 @@ namespace BE
         string lastName;
         string firstName;
         string birth;
-        string gender;
+        _gender gender;
         string phone;
-        string address;
-        string carType;
-        string gearBox;
-        string schoolName;
+        address adr;
+        car_Type carType;
+        gear_Box gearBox;
+        school_Name schoolName;
         string teacher;
         int classNum;
         //another properties by demand
