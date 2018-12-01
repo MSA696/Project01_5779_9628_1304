@@ -9,7 +9,8 @@ namespace BE
     public class Tester
     {
         int id;
-        string lastName; //{ get; set;}
+        string lastName;
+        public string _lastName { get { return lastName; } set { lastName = value; } }
         string firstName;
         string birth;
         _gender gender;

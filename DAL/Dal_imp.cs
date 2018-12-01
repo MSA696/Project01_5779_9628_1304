@@ -4,100 +4,77 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using DS;
 
 namespace DAL
 {
     public class Dal_imp : Idal
     {
-        //ToDo: 1.Make sure that Dal layer is the only one approche DS
-        // 2. Make check if ID dosen't excicits
-        // 3. DAL layer adds to Test the testId
-
-        /*  Tester addTester()
-          {
-
-          }
-          void deleteTester()
-          {
-
-          }
-          Tester setTester()
-          {
-
-          }
-
-          Trainee addTrainee()
-          {
-
-          }
-          void deleteTrainee() { }
-          Trainee setTrainee() { }
-
-          Test addTest()
-          {
-              code++;
-          }
-          Test setTest() { }
-
-          List<Tester> getTesters() { }
-          List<Trainee> getTrainees() { }
-          List<Test> getTests() { }*/
-        //the one up ^ is our coding
-        // ---WE NEED TO DECIDE WHICH ONE TO USE
-        //the one down V is the auto-complete coding
-        void Idal.addTest(Test a)
+        void Idal.addTest(Test b)
         {
-            throw new NotImplementedException();
+            Test a = new Test();
+            a._testId = Configuration.firstNum;
+            Console.WriteLine("tester id");
+            Console.ReadLine((a._testerId));//int type
+            Configuration.firstNum++;
+            DataSouce.tests.Add(a);
+            //...
         }
 
         void Idal.addTester(Tester a)
         {
-            throw new NotImplementedException();
+            DataSouce.testers.Add(a);
         }
 
         void Idal.addTrainee(Trainee a)
         {
-            throw new NotImplementedException();
+            DataSouce.trainees.Add(a);
         }
 
         void Idal.deleteTester(Tester a)
         {
-            throw new NotImplementedException();
+            DataSouce.testers.Remove(a);
         }
 
         void Idal.deleteTrainee(Trainee a)
         {
-            throw new NotImplementedException();
+            DataSouce.trainees.Remove(a);
         }
 
         void Idal.getTesters(List<Tester> a)
         {
-            throw new NotImplementedException();
+            foreach (var el in DataSouce.testers)
+                Console.WriteLine(el);
         }
 
         void Idal.getTests(List<Test> a)
         {
-            throw new NotImplementedException();
+            foreach (var el in DataSouce.tests)
+                Console.WriteLine(el);
         }
 
         void Idal.getTrainees(List<Trainee> a)
         {
-            throw new NotImplementedException();
+            foreach (var el in DataSouce.trainees)
+                Console.WriteLine(el);
         }
 
-        Test Idal.updateTest(Test a)
+        void Idal.updateTest(Test a)
         {
-            throw new NotImplementedException();
+            //int index = DataSouce.tests.BinarySearch(a);
+            //DataSouce.tests[index].
         }
 
-        Tester Idal.updateTester(Tester a)
+        void Idal.updateTester(Tester a)
         {
-            throw new NotImplementedException();
+            //int index = DataSouce.testers.BinarySearch(a);
+            //DataSouce.tests[index].
         }
 
-        Trainee Idal.updateTrainee(Trainee a)
+        void Idal.updateTrainee(Trainee a)
         {
-            throw new NotImplementedException();
+            //int index = DataSouce.trainees.BinarySearch(a);
+            //DataSouce.tests[index].
         }
     }
 }

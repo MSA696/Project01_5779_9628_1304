@@ -8,9 +8,12 @@ namespace BE
 {
     public class Test
     {
-        static int testId = Configuration.firstNum;
+        int testId;
+        public int _testId { set { testId = value; } get { return testId; } }
         int testerId;
+        public int _testerId { set { testerId = value; } get { return testerId; } }
         int traineeId;
+        public int _traineeId { set { traineeId = value; } get { return traineeId; } }
         DateTime testDate;
         string dateAndHour; //the time for a test is always 1 hour
         address beginOfTestAdr;
@@ -24,9 +27,9 @@ namespace BE
         {
             return "";//assumption: returns any property of class as String
         }
-        Test()
+        public Test()
         {
-
+            
         }
     }
 }
