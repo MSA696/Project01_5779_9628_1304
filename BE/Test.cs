@@ -9,7 +9,7 @@ namespace BE
     public class Test
     {
         int testId;
-        public int _testId { set { testId = value; } get { return testId; } }
+        public int _testId { set { testId = value; } get { return testId; } }   // sure this is the method to configure the "testId"? how we implement the run-number?
         int testerId;
         public int _testerId { set { testerId = value; } get { return testerId; } }
         int traineeId;

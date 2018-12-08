@@ -12,13 +12,10 @@ namespace DAL
     {
         void Idal.addTest(Test b)
         {
-            Test a = new Test();
-            a._testId = Configuration.firstNum;
-            Console.WriteLine("tester id");
-            Console.ReadLine((a._testerId));//int type
+            b._testId = Configuration.firstNum; 
             Configuration.firstNum++;
-            DataSouce.tests.Add(a);
-            //...
+            DataSouce.tests.Add(b);
+            //y:... //m:?
         }
 
         void Idal.addTester(Tester a)
@@ -34,11 +31,13 @@ namespace DAL
         void Idal.deleteTester(Tester a)
         {
             DataSouce.testers.Remove(a);
+            //make sure id of removed tester is no longer exsit
         }
 
         void Idal.deleteTrainee(Trainee a)
         {
             DataSouce.trainees.Remove(a);
+            //make sure id of removed trainee is no longer exsit
         }
 
         void Idal.getTesters(List<Tester> a)

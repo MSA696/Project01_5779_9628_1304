@@ -15,9 +15,9 @@ namespace BE
         static int TestRange = 7;
         public static int firstNum = 0;
     }
-    struct address
+    public struct address
     {
-        string city;
+        cities city;
         string street;
         int building;
     }
