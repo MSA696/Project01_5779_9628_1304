@@ -10,12 +10,14 @@ namespace DAL
 {
     public class Dal_imp : Idal
     {
+        public  List<Test> tests = new List<Test>();
+        public  List<Tester> testers = new List<Tester>();
+        public  List<Trainee> trainees = new List<Trainee>();
         void Idal.addTest(Test b)
         {
             b._testId = Configuration.firstNum; 
             Configuration.firstNum++;
-            DataSouce.tests.Add(b);
-            //y:... //m:?
+            tests.Add(b);
         }
 
         void Idal.addTester(Tester a)
