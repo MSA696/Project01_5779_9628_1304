@@ -9,6 +9,7 @@ namespace BE
     public class Tester
     {
         int id;
+        public int _testerId { set { id = value; } get { return id; } }
         string lastName;
         public string _lastName { get { return lastName; } set { lastName = value; } }
         string firstName;

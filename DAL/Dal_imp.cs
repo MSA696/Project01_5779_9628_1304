@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
-using DS;
 
 namespace DAL
 {
@@ -13,69 +12,87 @@ namespace DAL
         public  List<Test> tests = new List<Test>();
         public  List<Tester> testers = new List<Tester>();
         public  List<Trainee> trainees = new List<Trainee>();
-        void Idal.addTest(Test b)
+        void Idal.addTest(Test a)
         {
-            b._testId = Configuration.firstNum; 
+            a._testId = Configuration.firstNum; 
             Configuration.firstNum++;
-            tests.Add(b);
+            tests.Add(a);
         }
 
         void Idal.addTester(Tester a)
         {
-            DataSouce.testers.Add(a);
+            testers.Add(a);
         }
 
         void Idal.addTrainee(Trainee a)
         {
-            DataSouce.trainees.Add(a);
+            trainees.Add(a);
         }
 
         void Idal.deleteTester(Tester a)
         {
-            DataSouce.testers.Remove(a);
+            testers.Remove(a);
             //make sure id of removed tester is no longer exsit
         }
 
         void Idal.deleteTrainee(Trainee a)
         {
-            DataSouce.trainees.Remove(a);
+            trainees.Remove(a);
             //make sure id of removed trainee is no longer exsit
         }
 
         void Idal.getTesters(List<Tester> a)
         {
-            foreach (var el in DataSouce.testers)
+            foreach (var el in testers)
                 Console.WriteLine(el);
         }
 
         void Idal.getTests(List<Test> a)
         {
-            foreach (var el in DataSouce.tests)
+            foreach (var el in tests)
                 Console.WriteLine(el);
         }
 
         void Idal.getTrainees(List<Trainee> a)
         {
-            foreach (var el in DataSouce.trainees)
+            foreach (var el in trainees)
                 Console.WriteLine(el);
         }
 
         void Idal.updateTest(Test a)
         {
-            //int index = DataSouce.tests.BinarySearch(a);
-            //DataSouce.tests[index].
+            int index = 0;
+            foreach (var el in tests)
+            {
+                if (el._testId == a._testId)
+                    break;
+                index++;
+            }
+            tests[index] = a;
         }
 
         void Idal.updateTester(Tester a)
         {
-            //int index = DataSouce.testers.BinarySearch(a);
-            //DataSouce.tests[index].
+            int index = 0;
+            foreach (var el in testers)
+            {
+                if (el._testerId == a._testerId)
+                    break;
+                index++;
+            }
+            testers[index] = a;
         }
 
         void Idal.updateTrainee(Trainee a)
         {
-            //int index = DataSouce.trainees.BinarySearch(a);
-            //DataSouce.tests[index].
+            int index = 0;
+            foreach (var el in trainees)
+            {
+                if (el._traineeId == a._traineeId)
+                    break;
+                index++;
+            }
+            trainees[index] = a;
         }
     }
 }
