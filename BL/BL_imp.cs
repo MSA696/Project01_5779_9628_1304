@@ -8,8 +8,10 @@ using DAL;
 
 namespace BL
 {
+    
     class BL_imp: IBL
     {
+        Dal_imp _DAL = new Dal_imp();
         public void addTest(Test a)
         {
             //no option to add test if 7 days didn't past from trainee's last test implementation
@@ -20,34 +22,34 @@ namespace BL
             //make sure there isn't two tests in the same time for the same trainee/tester. 
             //no option to add test if trainee already succesfuly passed test in same carType implementation
             //make sure to fit tester to trainee by carType
-            throw new NotImplementedException();
+            _DAL.addTest(a);
         }
 
         public void addTester(Tester a)
         {
             //no option to add tester above MaxAge implementation
-            throw new NotImplementedException();
+            _DAL.addTester(a);
         }
 
         public void addTrainee(Trainee a)
         {
             //no option to add trainee beneath MinAge implementation
-            throw new NotImplementedException();
+            _DAL.addTrainee(a);
         }
 
         public void deleteTester(Tester a)
         {
-            throw new NotImplementedException();
+            _DAL.deleteTester(a);
         }
 
         public void deleteTrainee(Trainee a)
         {
-            throw new NotImplementedException();
+            _DAL.deleteTrainee(a);
         }
 
         public void getTesters(List<Tester> a)
         {
-            throw new NotImplementedException();
+            return (_DAL.getTesters());
         }
 
         public void getTests(List<Test> a)
