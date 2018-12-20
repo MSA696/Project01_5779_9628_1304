@@ -12,54 +12,84 @@ namespace DAL
         public  List<Test> tests = new List<Test>();
         public  List<Tester> testers = new List<Tester>();
         public  List<Trainee> trainees = new List<Trainee>();
-        void Idal.addTest(Test a)
+        public void addTest(Test a)
         {
-            a._testId = Configuration.firstNum; 
-            Configuration.firstNum++;
-            tests.Add(a);
+            try
+            {
+                if (tests.Contains(a))
+                {
+                    //throw new Exception
+                }
+                a._testId = Configuration.firstNum;
+                Configuration.firstNum++;
+                tests.Add(a);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("The Test exist ");
+            }
         }
 
-        void Idal.addTester(Tester a)
+        public void addTester(Tester a)
         {
-            testers.Add(a);
+            try
+            {
+                if (testers.Contains(a))
+                {
+                    //throw new Exception
+                }
+                testers.Add(a);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("The Tester exist ");
+            }
         }
 
-        void Idal.addTrainee(Trainee a)
+        public void addTrainee(Trainee a)
         {
-            trainees.Add(a);
+            try
+            {
+                if (trainees.Contains(a))
+                {
+                    //throw new Exception
+                }
+                trainees.Add(a);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("The Tester exist ");
+            }
         }
 
-        void Idal.deleteTester(Tester a)
+        public void deleteTester(Tester a)
         {
             testers.Remove(a);
             //make sure id of removed tester is no longer exsit
         }
 
-        void Idal.deleteTrainee(Trainee a)
+        public void deleteTrainee(Trainee a)
         {
             trainees.Remove(a);
             //make sure id of removed trainee is no longer exsit
         }
 
-        void Idal.getTesters(List<Tester> a)
+        public List<Tester> getTesters()
         {
-            foreach (var el in testers)
-                Console.WriteLine(el);
+            return testers;
         }
 
-        void Idal.getTests(List<Test> a)
+        public List<Test> getTests()
         {
-            foreach (var el in tests)
-                Console.WriteLine(el);
+            return tests;
         }
 
-        void Idal.getTrainees(List<Trainee> a)
+        public List<Trainee> getTrainees()
         {
-            foreach (var el in trainees)
-                Console.WriteLine(el);
+            return trainees;
         }
 
-        void Idal.updateTest(Test a)
+        public void updateTest(Test a)
         {
             int index = 0;
             foreach (var el in tests)
@@ -71,7 +101,7 @@ namespace DAL
             tests[index] = a;
         }
 
-        void Idal.updateTester(Tester a)
+        public void updateTester(Tester a)
         {
             int index = 0;
             foreach (var el in testers)
@@ -83,7 +113,7 @@ namespace DAL
             testers[index] = a;
         }
 
-        void Idal.updateTrainee(Trainee a)
+        public void updateTrainee(Trainee a)
         {
             int index = 0;
             foreach (var el in trainees)

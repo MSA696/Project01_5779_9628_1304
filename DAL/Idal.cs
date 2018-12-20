@@ -20,8 +20,8 @@ namespace DAL
         void addTest(Test a);
         void updateTest(Test a); //not sure about the recive and returned parameters
 
-        void getTesters(List<Tester> a);
-        void getTrainees(List<Trainee> a);
-        void getTests(List<Test> a);
+        List<Tester> getTesters();
+        List<Trainee> getTrainees();
+        List<Test> getTests();
     }
 }
