@@ -11,6 +11,7 @@ namespace BL
     
     public class BL_imp: IBL
     {
+
         Dal_imp _DAL = new Dal_imp();
         public void addTest(Test a)
         {
