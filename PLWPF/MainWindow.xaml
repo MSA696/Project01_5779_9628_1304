@@ -1,12 +1,24 @@
-﻿<Window x:Class="PLWPF.MainWindow"
+﻿<Window x:Class="MainWindow.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PLWPF"
+        xmlns:local="clr-namespace:MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="400" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="333*"/>
+            <ColumnDefinition Width="333*"/>
+            <ColumnDefinition Width="333*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Image Source="Images/ralbad.jpg" Grid.ColumnSpan="3"/>
+        <Button x:Name="testers" Content="Testers" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="200" FontSize="36" Click="testers_Click"/>
+        <Button x:Name="trainee" Content="Trainee" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"  Width="200" FontSize="36" Click="trainee_Click"/>
+        <Button x:Name="admin" Content="Admin" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="200" FontSize="36" Click="admin_Click"/>
     </Grid>
 </Window>

@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BL;
 
-namespace PLWPF
+namespace MainWindow
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +24,21 @@ namespace PLWPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+        BL_imp bl = new BL_imp();
+        private void testers_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void trainee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void admin_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

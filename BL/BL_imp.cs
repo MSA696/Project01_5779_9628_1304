@@ -9,7 +9,7 @@ using DAL;
 namespace BL
 {
     
-    class BL_imp: IBL
+    public class BL_imp: IBL
     {
         Dal_imp _DAL = new Dal_imp();
         public void addTest(Test a)
