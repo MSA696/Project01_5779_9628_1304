@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="traineeIn" Height="200" Width="400">
+        Title="traineeIn" Height="150" Width="400">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="name" Content="Name " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="26" />
+        <Label x:Name="id" Content="Id " HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" FontSize="26" />
+        <TextBox x:Name="nameBox" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" FontSize="18" Margin="13,17,4.234,17"/>
+        <TextBox x:Name="idBox" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" FontSize="18" Margin="13,17,4.234,16"/>
+        <Button x:Name="logIn" Content="log in" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="60"/>
+
     </Grid>
 </Window>

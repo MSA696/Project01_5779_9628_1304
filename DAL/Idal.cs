@@ -7,7 +7,7 @@ using BE;
 
 namespace DAL
 {
-    interface Idal
+   public interface Idal
     {
         void addTester(Tester a);
         void deleteTester(Tester a);

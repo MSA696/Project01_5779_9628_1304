@@ -12,7 +12,7 @@ namespace BL
     public class BL_imp: IBL
     {
 
-        Dal_imp _DAL = new Dal_imp();
+        //Idal _DAL = new Idal();
         public void addTest(Test a)
         {
             //no option to add test if 7 days didn't past from trainee's last test implementation
@@ -101,6 +101,21 @@ namespace BL
         public List<Test> testSortList()
         {
             //return list of all tests sorted by day/month
+            throw new NotImplementedException();
+        }
+
+        public List<Tester> getTesters()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Trainee> getTrainees()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Test> getTests()
+        {
             throw new NotImplementedException();
         }
     }
