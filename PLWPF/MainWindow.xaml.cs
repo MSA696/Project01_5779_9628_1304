@@ -29,18 +29,20 @@ namespace MainWindow
         BL_imp bl = new BL_imp();
         private void testers_Click(object sender, RoutedEventArgs e)
         {
-            //this.Visibility = Visibility.Collapsed;
+            this.Visibility = Visibility.Collapsed;
             new testerIn().ShowDialog();
         }
 
         private void trainee_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Visibility = Visibility.Collapsed;
+            new traineeIn().ShowDialog();
         }
 
         private void admin_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Visibility = Visibility.Collapsed;
+            new adminIn().ShowDialog();
         }
     }
 }

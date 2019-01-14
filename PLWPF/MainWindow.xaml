@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/test drive.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="333*"/>
             <ColumnDefinition Width="333*"/>
@@ -16,7 +19,6 @@
             <RowDefinition Height="80*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <Image Source="Images/ralbad.jpg" Grid.ColumnSpan="3"/>
         <Button x:Name="testers" Content="Testers" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="200" FontSize="36" Click="testers_Click" Background="#FFDDDDDD"/>
         <Button x:Name="trainee" Content="Trainee" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"  Width="200" FontSize="36" Click="trainee_Click"/>
         <Button x:Name="admin" Content="Admin" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="200" FontSize="36" Click="admin_Click"/>
