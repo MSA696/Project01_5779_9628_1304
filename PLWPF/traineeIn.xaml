@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="traineeIn" Height="150" Width="400">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/road.jpg" Opacity="0.85"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="40*"/>

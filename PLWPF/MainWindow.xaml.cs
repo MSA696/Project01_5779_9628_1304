@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
+using PLWPF;
 
 namespace MainWindow
 {
@@ -28,7 +29,8 @@ namespace MainWindow
         BL_imp bl = new BL_imp();
         private void testers_Click(object sender, RoutedEventArgs e)
         {
-
+            //this.Visibility = Visibility.Collapsed;
+            new testerIn().ShowDialog();
         }
 
         private void trainee_Click(object sender, RoutedEventArgs e)
