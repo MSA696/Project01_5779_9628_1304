@@ -26,7 +26,7 @@ namespace MainWindow
         {
             InitializeComponent();
         }
-        BL_imp bl = new BL_imp();
+        //BL_imp bl = new BL_imp();
         private void testers_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
