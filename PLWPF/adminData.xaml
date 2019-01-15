@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:PLWPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        TextElement.FontWeight="Medium"
-        TextElement.FontSize="14"
-        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
         Title="adminData" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
@@ -36,7 +33,10 @@
         <Grid.Background>
             <ImageBrush ImageSource="images/road 2.jpg" Opacity="0.5"/>
         </Grid.Background>
-
+        <Grid x:Name="add" Height="540" Width="880" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            
+            
+        </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF3A6BB2" >
             <TextBlock Text="welcome admin" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">

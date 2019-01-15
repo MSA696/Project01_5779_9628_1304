@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
         Title="traineeData" Height="300" Width="300">
     <Grid>
-        
+        <materialDesign:PackIcon Foreground="Black" Visibility="Visible" Background="Black" IsEnabled="True" Height="200" Width="50"  Kind="Teacher" Margin="86,83,148,-14"/>
     </Grid>
 </Window>

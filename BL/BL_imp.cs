@@ -12,7 +12,7 @@ namespace BL
     public class BL_imp: IBL
     {
 
-        //Idal _DAL = new Idal();
+        Dal_imp _DAL = new Dal_imp();
         public void addTest(Test a)
         {
             //no option to add test if 7 days didn't past from trainee's last test implementation
@@ -50,7 +50,7 @@ namespace BL
 
         public void getTesters(List<Tester> a)
         {
-            return (_DAL.getTesters());
+            //return (_DAL.getTesters());
         }
 
         public void getTests(List<Test> a)

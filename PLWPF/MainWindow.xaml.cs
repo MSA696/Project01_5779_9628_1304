@@ -30,13 +30,13 @@ namespace MainWindow
         private void testers_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
-            new testerIn().ShowDialog();
+            new testerDef().ShowDialog();
         }
 
         private void trainee_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
-            new traineeIn().ShowDialog();
+            new traineeDef().ShowDialog();
         }
 
         private void admin_Click(object sender, RoutedEventArgs e)
