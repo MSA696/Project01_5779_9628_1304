@@ -17,11 +17,11 @@
             <ColumnDefinition Width="333*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/> 
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="tester" Content="Tester" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="200" FontSize="36" Click="testers_Click" Background="#FFDDDDDD"/>
-        <Button x:Name="trainee" Content="Trainee" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"  Width="200" FontSize="36" Click="trainee_Click"/>
-        <Button x:Name="admin" Content="Admin" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="200" FontSize="36" Click="admin_Click"/>
+        <Button x:Name="tester" Content="Tester" Grid.Row="1" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="200" FontSize="36" Click="testers_Click"/>
+        <Button x:Name="trainee" Content="Trainee" Grid.Column="1" Height="50" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"  Width="200" FontSize="36" Click="trainee_Click"/>
+        <Button x:Name="admin" Content="Admin" Grid.Column="2" Height="50" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="200" FontSize="36" Click="admin_Click"/>
     </Grid>
 </Window>
