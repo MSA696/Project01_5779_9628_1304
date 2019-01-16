@@ -16,7 +16,7 @@ namespace BE
         string birth;
         _gender gender;
         string phone;
-        address adr;
+        address addr;
         int experience;
         int maxTests;
         car_Type carType;

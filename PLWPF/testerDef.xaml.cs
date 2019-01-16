@@ -27,7 +27,7 @@ namespace PLWPF
         private void addTrainee_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
-            new testerIn().ShowDialog();
+            new testerData().ShowDialog();
         }
 
         private void getIn_Click(object sender, RoutedEventArgs e)

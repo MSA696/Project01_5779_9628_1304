@@ -19,9 +19,21 @@ namespace PLWPF
     /// </summary>
     public partial class traineeData : Window
     {
+        BE.Trainee trainee;
+        BL.BL_imp bl;
         public traineeData()
         {
             InitializeComponent();
+            trainee = new BE.Trainee();
+            this.addGrid.DataContext = trainee;
+            //bl = BL.FactoryBL.GetBL();
+        }
+
+        private void addTester_Click(object sender, RoutedEventArgs e)
+        {
+            bl.addTrainee(trainee);
+            trainee = new BE.Trainee();
+            this.addGrid.DataContext = trainee;
         }
     }
 }
