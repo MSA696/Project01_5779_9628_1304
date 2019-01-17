@@ -6,25 +6,31 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class factoryDAL
+    public class factoryDAL
     {
         protected factoryDAL() { }
 
-        protected static factoryDAL instance = null;
+        public static Idal DALGetInstance()
+        {
+            return Dal_imp.GetInstance();
+        }
 
-        public static factoryDAL GetIntance()
+        /*protected static Dal_imp instance = null;
+
+        public static Dal_imp GetInstance()
         {
             if (instance == null)
-                instance = new factoryDAL();
+                instance = new Dal_imp();
             return instance;
-        }
-        private static Idal dal = null;
+        }*/
+
+        /*private static Idal dal = null;
         public static Idal getInstance()
         {
             //return bl ?? (bl = new BL_imp());
             if (dal == null)
                 dal = new factoryDAL();
             return dal;
-        }
+        }*/
     }
 }

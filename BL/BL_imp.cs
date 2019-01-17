@@ -11,8 +11,20 @@ namespace BL
     
     public class BL_imp: IBL
     {
+        /*DAL.Idal dal;
+        dal = DAL.factoryDAL.GetInstance();*/
 
-        Dal_imp _DAL = new Dal_imp();
+        protected BL_imp() { }
+        static BL_imp BLinstance;
+        public static BL_imp GetInstance()
+        {
+            if (BLinstance == null)
+                BLinstance = new BL_imp();
+            return BLinstance;
+        }
+
+        Idal dal = factoryDAL.DALGetInstance();
+        
         public void addTest(Test a)
         {
             //no option to add test if 7 days didn't past from trainee's last test implementation
@@ -23,29 +35,29 @@ namespace BL
             //make sure there isn't two tests in the same time for the same trainee/tester. 
             //no option to add test if trainee already succesfuly passed test in same carType implementation
             //make sure to fit tester to trainee by carType
-            _DAL.addTest(a);
+            dal.addTest(a);
         }
 
         public void addTester(Tester a)
         {
             //no option to add tester above MaxAge implementation
-            _DAL.addTester(a);
+            dal.addTester(a);
         }
 
         public void addTrainee(Trainee a)
         {
             //no option to add trainee beneath MinAge implementation
-            _DAL.addTrainee(a);
+            dal.addTrainee(a);
         }
 
         public void deleteTester(Tester a)
         {
-            _DAL.deleteTester(a);
+            dal.deleteTester(a);
         }
 
         public void deleteTrainee(Trainee a)
         {
-            _DAL.deleteTrainee(a);
+            dal.deleteTrainee(a);
         }
 
         public void getTesters(List<Tester> a)

@@ -12,6 +12,18 @@ namespace DAL
         public  List<Test> tests = new List<Test>();
         public  List<Tester> testers = new List<Tester>();
         public  List<Trainee> trainees = new List<Trainee>();
+
+        internal Dal_imp() { }
+
+        static Dal_imp DALinstance=null;
+        public static Dal_imp GetInstance()
+        {
+            if (DALinstance == null)
+                DALinstance = new Dal_imp();
+            return DALinstance;
+        }
+
+        #region Function
         public void addTest(Test a)
         {
             try
@@ -124,5 +136,6 @@ namespace DAL
             }
             trainees[index] = a;
         }
+        #endregion
     }
 }

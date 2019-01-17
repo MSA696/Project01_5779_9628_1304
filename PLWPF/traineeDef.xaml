@@ -15,7 +15,7 @@
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="addTrainee" Content="Add Trainee" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="40" FontSize="18" Click="addTrainee_Click"/>
-        <Button x:Name="getIn" Content="Lod In" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="40" FontSize="18" Click="getIn_Click"/>
+        <Button x:Name="getIn" Content="Log In" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="40" FontSize="18" Click="getIn_Click"/>
 
     </Grid>
 </Window>
