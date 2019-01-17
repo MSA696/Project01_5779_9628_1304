@@ -9,6 +9,7 @@ namespace DAL
 {
    public interface Idal
     {
+        
         void addTester(Tester a);
         void deleteTester(Tester a);
         void updateTester(Tester a); //not sure about the recive and returned parameters

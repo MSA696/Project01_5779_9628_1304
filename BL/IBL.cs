@@ -23,12 +23,14 @@ namespace BL
         List<Tester> getTesters();
         List<Trainee> getTrainees();
         List<Test> getTests();
+
         List<Tester> TesterByDistance(address a);
         List<Tester> TesterByDateandtime(DateTime a);
-        //didn't understand the demand "kol ha'mivhanim"
+        bool TestByCondition(Delegate a);//<--!!didn't understand the demand "kol ha'mivhanim"
+
         int traineeTestCount(Trainee a);
         bool traineeScore(Trainee a);
-        List<Test> testSortList();
+        List<Test> testSortList();  //do here sort of the list by DateAndTime of Tests
         //next func are by Grouping method - we have an Exmple in main !
         //  List of Testers by specialization type
         //  List of Trainee by driving school
