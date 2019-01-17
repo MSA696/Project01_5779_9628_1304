@@ -9,12 +9,15 @@ namespace DAL
 {
     public class Dal_imp : Idal
     {
-        public  List<Test> tests = new List<Test>();
+        #region initiliazeData
+        public List<Test> tests = new List<Test>();
         public  List<Tester> testers = new List<Tester>();
         public  List<Trainee> trainees = new List<Trainee>();
+        #endregion
 
         internal Dal_imp() { }
 
+        #region Singelton
         static Dal_imp DALinstance=null;
         public static Dal_imp GetInstance()
         {
@@ -22,8 +25,9 @@ namespace DAL
                 DALinstance = new Dal_imp();
             return DALinstance;
         }
+        #endregion
 
-        #region Function
+        #region InterfaceImplement
         public void addTest(Test a)
         {
             try

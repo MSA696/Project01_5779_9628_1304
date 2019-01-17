@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BL;
 
 namespace PL
 {
     class Program
     {
+        IBL BL  = factoryBL.BLGetInstance();
+
         /// <summary>
         /// Phase 1:
         ///  we'll active all functions from the BL layer in PL\UI(here) to show that they are working properly.
