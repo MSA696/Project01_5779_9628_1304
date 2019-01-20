@@ -13,13 +13,14 @@ namespace BE
         string lastName;
         public string _lastName { get { return lastName; } set { lastName = value; } }
         string firstName;
-        string birth;
+        DateTime birth;
         _gender gender;
         string phone;
         address addr;
         int experience;
         int maxTests;
         car_Type carType;
+        school_Name schoolName;
         bool[,] workHour = new bool[5, 6];
         int maxDist;
         //another properties by demand

@@ -21,9 +21,8 @@
         </Grid.RowDefinitions>
         <Label x:Name="name" Content="Name " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="26" />
         <Label x:Name="id" Content="Id " HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" FontSize="26" />
-        <TextBox x:Name="nameBox" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" FontSize="18" Margin="13,17,4.234,17"/>
-        <TextBox x:Name="idBox" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" FontSize="18" Margin="13,17,4.234,16"/>
-        <Button x:Name="logIn" Content="log in" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="60"/>
-
+        <TextBox x:Name="nameBox" BorderThickness="1" Background="Beige" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" FontSize="18" Margin="13,17,4.234,17"/>
+        <TextBox x:Name="idBox" BorderThickness="1" Background="Beige" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" FontSize="18" Margin="13,17,4.234,16"/>
+        <Button x:Name="logIn" Content="log in" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="65" FontSize="12"/>
     </Grid>
 </Window>

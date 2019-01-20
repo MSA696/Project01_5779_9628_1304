@@ -20,14 +20,14 @@ namespace PLWPF
     public partial class testerData : Window
     {
         BE.Tester tester;
-        BL.BL_imp bl;
+        BL.IBL bl;
 
         public testerData()
         {
             InitializeComponent();
             tester = new BE.Tester();
             this.addGrid.DataContext = tester;
-            //bl = BL.FactoryBL.GetBL();
+            bl = BL.factoryBL.BLGetInstance();
         }
 
         private void buttonOpenMenu_Click(object sender, RoutedEventArgs e)
@@ -47,6 +47,7 @@ namespace PLWPF
             bl.addTester(tester);
             tester = new BE.Tester();
             this.addGrid.DataContext = tester;
+            addGrid.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    enum car_Type { privateCar, bike, mediumTruck, havyTruck }
-    enum gear_Box { manual, automatic }
-    enum _gender { male, female }
-    enum school_Name { }
-    enum cities { }
+    public enum car_Type { bike, privateCar, mediumTruck, havyTruck }
+    public enum gear_Box { manual, automatic }
+    public enum _gender { male, female }
+    public enum school_Name { or_yarok }
+    public enum cities { }  
 
     class myEnum    //demand: defind enums in sperad file. Q; are they needs to be in class? or out of class? 
     {

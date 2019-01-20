@@ -88,6 +88,9 @@
     <Compile Include="traineeIn.xaml.cs">
       <DependentUpon>traineeIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="traineeShow.xaml.cs">
+      <DependentUpon>traineeShow.xaml</DependentUpon>
+    </Compile>
     <Page Include="adminData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="traineeIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="traineeShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

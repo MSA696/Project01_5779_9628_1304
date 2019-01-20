@@ -20,20 +20,23 @@ namespace PLWPF
     public partial class traineeData : Window
     {
         BE.Trainee trainee;
-        BL.BL_imp bl;
+        BL.IBL bl;
         public traineeData()
         {
-            InitializeComponent();
-            trainee = new BE.Trainee();
-            this.addGrid.DataContext = trainee;
-            //bl = BL.FactoryBL.GetBL();
+            
+                InitializeComponent();
+                trainee = new BE.Trainee();
+                this.addGrid.DataContext = trainee;
+                bl = BL.factoryBL.BLGetInstance();
+            
         }
 
         private void addTester_Click(object sender, RoutedEventArgs e)
         {
             bl.addTrainee(trainee);
-            trainee = new BE.Trainee();
-            this.addGrid.DataContext = trainee;
+            this.Visibility = Visibility.Collapsed;
+            new traineeShow(trainee).ShowDialog();
         }
+        
     }
 }

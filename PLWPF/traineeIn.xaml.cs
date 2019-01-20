@@ -19,9 +19,21 @@ namespace PLWPF
     /// </summary>
     public partial class traineeIn : Window
     {
+        BE.Trainee trainee;
+        BL.IBL bl = BL.factoryBL.BLGetInstance();
         public traineeIn()
         {
             InitializeComponent();
+        }
+
+        private void logIn_Click(object sender, RoutedEventArgs e)
+        {
+            //trainee = bl.getTrainee(idBox.Text);
+            if (trainee.firstName == nameBox.Text)
+            {
+                this.Visibility = Visibility.Collapsed;
+                new traineeShow().ShowDialog();
+            }
         }
     }
 }
