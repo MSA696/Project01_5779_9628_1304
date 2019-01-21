@@ -1,16 +1,17 @@
 ﻿using System;
-using System.IO;
-using System.Net;
-using System.Xml;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
 using DAL;
+using System.IO;
+using System.Net;
+using System.Xml;
 
 namespace BL
 {
+    
     public class BL_imp: IBL
     {
         #region Singelton
@@ -77,28 +78,62 @@ namespace BL
         public List<Tester> getTesters()
         {
             //return (_DAL.getTesters());
-            throw new NotImplementedException();
+            return dal.getTesters();
         }        
         public List<Trainee> getTrainees()
         {
-            throw new NotImplementedException();
+            return dal.getTrainees();
         }
 
         public List<Test> getTests()
         {
-            throw new NotImplementedException();
+            return getTests();
         }
 
         public List<Tester> TesterByDistance(address a)
         {
-            //in later Phase will use WebRequest, for Phase 1 raffle fit number - what's the meaning?
-            List<Tester> testers = new List<Tester>();
-            for (int i = 0; i < (dal.getTesters()).Count; i++)
+            string origin = "menahem begin 111 ave. kiryat shmona"; //or " אחד העם 100 פתח תקווה " etc.
+            string destination = "yoni netanyahu 1013, kiryat arba";//or " ז'בוטינסקי 10 רמת גן " etc.
+            string KEY = @"CpK0KMZhQe3Utqow8JwT6Py9pZApvr9l";
+            string url = @"https://www.mapquestapi.com/directions/v2/route" +
+           @"?key=" + KEY +
+           @"&from=" + origin +
+           @"&to=" + destination +
+           @"&outFormat=xml" +
+           @"&ambiguities=ignore&routeType=fastest&doReverseGeocode=false" +
+           @"&enhancedNarrative=false&avoidTimedConditions=false";
+            //request from MapQuest service the distance between the 2 addresses
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            Stream dataStream = response.GetResponseStream();
+            StreamReader sreader = new StreamReader(dataStream);
+            string responsereader = sreader.ReadToEnd();
+            response.Close();
+            //the response is given in an XML format
+            XmlDocument xmldoc = new XmlDocument();
+            xmldoc.LoadXml(responsereader);
+            if (xmldoc.GetElementsByTagName("statusCode")[0].ChildNodes[0].InnerText == "0")
+            //we have the expected answer
             {
-
+                //display the returned distance
+                XmlNodeList distance = xmldoc.GetElementsByTagName("distance");
+                double distInMiles = Convert.ToDouble(distance[0].ChildNodes[0].InnerText);
+                Console.WriteLine("Distance In KM: " + distInMiles * 1.609344);
+                //display the returned driving time
+                XmlNodeList formattedTime = xmldoc.GetElementsByTagName("formattedTime");
+                string fTime = formattedTime[0].ChildNodes[0].InnerText;
+                Console.WriteLine("Driving Time: " + fTime);
             }
-            
-            return testers;
+            else if (xmldoc.GetElementsByTagName("statusCode")[0].ChildNodes[0].InnerText == "402")
+            //we have an answer that an error occurred, one of the addresses is not found
+            {
+                Console.WriteLine("an error occurred, one of the addresses is not found. try again.");
+            }
+            else //busy network or other error...
+            {
+                Console.WriteLine("We have'nt got an answer, maybe the net is busy...");
+            }
+            throw new NotImplementedException();
         }
         public List<Tester> TesterByDateandtime(DateTime a)
         {
@@ -116,11 +151,16 @@ namespace BL
         public int traineeTestCount(Trainee a)
         {
             //return number of tests Trainee did
-            throw new NotImplementedException();
+            return a.TestsNum;           //צריך לדאוג: א'-לאפס את השדה ביצירת התלמיד. ב'-שבכל פעם שמייצרים (בהצלחה) טסט לתלמיד להגדיל את הערך הזה ב1
         }
         public bool traineeScore(Trainee a)
         {
-            throw new NotImplementedException();
+            List<Test> tmp = getTests();
+            for (int i = tmp.Count; i > 0; i--)
+            {
+                if (tmp[i].traineeId == a.id) return tmp[i].score;
+            }
+            throw new Exception(); //צריך לעשות כאן חריגה שעוברת ליו.איי. ומודיע לה שלא נמצא מבחן שעשה התלמיד הנ"ל
         }
         public List<Test> testSortList()
         {

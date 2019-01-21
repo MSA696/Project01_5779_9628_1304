@@ -24,6 +24,8 @@ namespace BE
         public int maxDis { get; set; }
         //public Tester* myTester { get; set; }
         //another properties by demand
+        public int TestsNum { get; set; }
+
         override public string ToString()
         {
             return "";//assumption: returns any property of class as String
