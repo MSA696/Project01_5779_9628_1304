@@ -78,16 +78,16 @@ namespace BL
         public List<Tester> getTesters()
         {
             //return (_DAL.getTesters());
-            throw new NotImplementedException();
+            return dal.getTesters();
         }        
         public List<Trainee> getTrainees()
         {
-            throw new NotImplementedException();
+            return dal.getTrainees();
         }
 
         public List<Test> getTests()
         {
-            throw new NotImplementedException();
+            return getTests();
         }
 
         public List<Tester> TesterByDistance(address a)
@@ -151,11 +151,16 @@ namespace BL
         public int traineeTestCount(Trainee a)
         {
             //return number of tests Trainee did
-            throw new NotImplementedException();
+            return a.TestsNum;           //צריך לדאוג: א'-לאפס את השדה ביצירת התלמיד. ב'-שבכל פעם שמייצרים (בהצלחה) טסט לתלמיד להגדיל את הערך הזה ב1
         }
         public bool traineeScore(Trainee a)
         {
-            throw new NotImplementedException();
+            List<Test> tmp = getTests();
+            for (int i = tmp.Count; i > 0; i--)
+            {
+                if (tmp[i].traineeId == a.id) return tmp[i].score;
+            }
+            throw new Exception(); //צריך לעשות כאן חריגה שעוברת ליו.איי. ומודיע לה שלא נמצא מבחן שעשה התלמיד הנ"ל
         }
         public List<Test> testSortList()
         {
