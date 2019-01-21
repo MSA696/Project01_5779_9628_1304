@@ -10,7 +10,6 @@ namespace BE
     public enum gear_Box { manual, automatic }
     public enum _gender { male, female }
     public enum school_Name { or_yarok }
-    public enum cities { }  
 
     class myEnum    //demand: defind enums in sperad file. Q; are they needs to be in class? or out of class? 
     {

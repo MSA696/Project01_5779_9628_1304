@@ -17,9 +17,9 @@ namespace BE
     }
     public struct address
     {
-        cities city;
-        string street;
-        int building;
+        public string city;
+        public string street;
+        public int building;
     }
 }
 

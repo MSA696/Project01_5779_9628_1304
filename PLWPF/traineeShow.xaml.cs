@@ -20,16 +20,18 @@ namespace PLWPF
     public partial class traineeShow : Window
     {
         BE.Trainee trainee;
+        BE.Test test;
         BL.IBL bl;
-        BE.Tester tester;
         public traineeShow()
         {
             InitializeComponent();
             trainee = new BE.Trainee();
+            test = new BE.Test();
+
+            bl = BL.factoryBL.BLGetInstance();
             this.addGrid.DataContext = trainee;
             this.showGrid.DataContext = trainee;
-            this.findGrid.DataContext = tester;
-            bl = BL.factoryBL.BLGetInstance();
+            this.findGrid.DataContext = bl.findTester(test.testerId, bl.getTesters());
 
             this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
             this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));

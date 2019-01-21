@@ -12,10 +12,12 @@ namespace BL
         void addTester(Tester a);
         void deleteTester(Tester a);
         Tester updateTester(Tester a); //not sure about the recive and returned parameters
+        Tester findTester(int id, List<Tester> a);
 
         void addTrainee(Trainee a);
         void deleteTrainee(Trainee a);
         Trainee updateTrainee(Trainee a); //not sure about the recive and returned parameters
+        Trainee findTrainee(int id, List<Trainee> a);
 
         void addTest(Test a);
         Test updateTest(Test a); //not sure about the recive and returned parameters
@@ -24,10 +26,10 @@ namespace BL
         List<Trainee> getTrainees();
         List<Test> getTests(); 
 
-        List<Tester> TesterByDistance(address a);
-        List<Tester> TesterByDateandtime(DateTime a);
-        Tester FindTester(List<Tester> a , List<Tester> b);// find a tester by the 2 func 
+        List<Tester> TesterByDistance(address traineeAddr, int maxDis);
+        List<Tester> TesterByDateandtime(DateTime a, List<Tester> list);
         bool TestByCondition(Delegate a);//<--!!didn't understand the demand "kol ha'mivhanim"
+        int checkDis(address a, address b);
 
         int traineeTestCount(Trainee a);
         bool traineeScore(Trainee a);

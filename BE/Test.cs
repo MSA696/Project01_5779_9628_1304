@@ -8,7 +8,7 @@ namespace BE
 {
     public class Test
     {
-        public Test() {}
+        public Test(){}
         public int testId { get; set; }
         public int testerId { get; set; }
         public int traineeId { get; set; }

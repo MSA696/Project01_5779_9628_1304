@@ -8,6 +8,7 @@ using DAL;
 using System.IO;
 using System.Net;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace BL
 {
@@ -41,7 +42,13 @@ namespace BL
         {
             throw new NotImplementedException();
         }
-
+        public Tester findTester(int id, List<Tester> a)
+        {
+            for (int i = 0; i < a.Count; i++)
+                if (a[i].id == id)
+                    return a[i];
+            throw new InvalidDataException("there is no tester with this id");
+        }
         public void addTrainee(Trainee a)
         {
             //no option to add trainee beneath MinAge implementation
@@ -55,7 +62,13 @@ namespace BL
         {
             throw new NotImplementedException();
         }
-
+        public Trainee findTrainee(int id, List<Trainee> a)
+        {
+            for (int i = 0; i < a.Count; i++)
+                if (a[i].id == id)
+                    return a[i];
+            throw new InvalidDataException("there is no trainee with this id");
+        }
         public void addTest(Test a)
         {
             //no option to add test if 7 days didn't past from trainee's last test implementation
@@ -90,18 +103,43 @@ namespace BL
             return getTests();
         }
 
-        public List<Tester> TesterByDistance(address a)
+        public List<Tester> TesterByDistance(address traineeAddr, int maxDis)
         {
-            string origin = "menahem begin 111 ave. kiryat shmona"; //or " אחד העם 100 פתח תקווה " etc.
-            string destination = "yoni netanyahu 1013, kiryat arba";//or " ז'בוטינסקי 10 רמת גן " etc.
-            string KEY = @"CpK0KMZhQe3Utqow8JwT6Py9pZApvr9l";
+            List<Tester> list = dal.getTesters();
+            List<Tester> tmp = new List<Tester>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (checkDis(traineeAddr, list[i].addr) < maxDis)
+                    tmp.Add(list[i]);
+            }
+            return tmp;
+        }
+        public List<Tester> TesterByDateandtime(DateTime a, List<Tester> list)
+        {
+            List<Tester> tmp = new List<Tester>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (true)///////////func to check if the tester is available
+                    tmp.Add(list[i]);
+            }
+            return tmp;
+        }
+        public bool TestByCondition(Delegate a)
+        {
+            throw new NotImplementedException();
+        }
+        public int checkDis(address a, address b)
+        {
+            string origin = (a.street + a.building + a.city).ToString();
+            string destination = (b.street + b.building + b.city).ToString();
+            string KEY = @"RimGTAFNgGAaEAUJWHIEXhlXc07qnMG0";
             string url = @"https://www.mapquestapi.com/directions/v2/route" +
-           @"?key=" + KEY +
-           @"&from=" + origin +
-           @"&to=" + destination +
-           @"&outFormat=xml" +
-           @"&ambiguities=ignore&routeType=fastest&doReverseGeocode=false" +
-           @"&enhancedNarrative=false&avoidTimedConditions=false";
+            @"?key=" + KEY +
+            @"&from=" + origin +
+            @"&to=" + destination +
+            @"&outFormat=xml" +
+            @"&ambiguities=ignore&routeType=fastest&doReverseGeocode=false" +
+            @"&enhancedNarrative=false&avoidTimedConditions=false";
             //request from MapQuest service the distance between the 2 addresses
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             WebResponse response = request.GetResponse();
@@ -118,32 +156,27 @@ namespace BL
                 //display the returned distance
                 XmlNodeList distance = xmldoc.GetElementsByTagName("distance");
                 double distInMiles = Convert.ToDouble(distance[0].ChildNodes[0].InnerText);
-                Console.WriteLine("Distance In KM: " + distInMiles * 1.609344);
+                //Console.WriteLine("Distance In KM: " + distInMiles * 1.609344);
                 //display the returned driving time
                 XmlNodeList formattedTime = xmldoc.GetElementsByTagName("formattedTime");
                 string fTime = formattedTime[0].ChildNodes[0].InnerText;
-                Console.WriteLine("Driving Time: " + fTime);
+                //Console.WriteLine("Driving Time: " + fTime);
+
+                return Convert.ToInt32(distInMiles * 1.609344);
             }
             else if (xmldoc.GetElementsByTagName("statusCode")[0].ChildNodes[0].InnerText == "402")
             //we have an answer that an error occurred, one of the addresses is not found
             {
                 Console.WriteLine("an error occurred, one of the addresses is not found. try again.");
+                throw new InvalidDataException("one of the addresses is not found");
             }
             else //busy network or other error...
             {
                 Console.WriteLine("We have'nt got an answer, maybe the net is busy...");
+                throw new InvalidDataException("We have'nt got an answer");
             }
-            throw new NotImplementedException();
         }
-        public List<Tester> TesterByDateandtime(DateTime a)
-        {
-            //will check testers that are work and available
-            throw new NotImplementedException();
-        }
-        public bool TestByCondition(Delegate a)
-        {
-            throw new NotImplementedException();
-        }
+
         public Tester FindTester(List<Tester> a, List<Tester> b)
         {
             throw new NotImplementedException();
