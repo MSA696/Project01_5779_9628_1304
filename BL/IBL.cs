@@ -26,6 +26,7 @@ namespace BL
 
         List<Tester> TesterByDistance(address a);
         List<Tester> TesterByDateandtime(DateTime a);
+        Tester FindTester(List<Tester> a , List<Tester> b);// find a tester by the 2 func 
         bool TestByCondition(Delegate a);//<--!!didn't understand the demand "kol ha'mivhanim"
 
         int traineeTestCount(Trainee a);
