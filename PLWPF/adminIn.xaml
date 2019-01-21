@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="adminIn" Height="150" Width="400">
+        Title="adminIn" Height="150" Width="400" >
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="images/road.jpg" Opacity="0.85"/>

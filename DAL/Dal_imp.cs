@@ -36,7 +36,7 @@ namespace DAL
                 {
                     //throw new Exception
                 }
-                a._testId = Configuration.firstNum;
+                a.testId = Configuration.firstNum;
                 Configuration.firstNum++;
                 tests.Add(a);
             }
@@ -110,7 +110,7 @@ namespace DAL
             int index = 0;
             foreach (var el in tests)
             {
-                if (el._testId == a._testId)
+                if (el.testId == a.testId)
                     break;
                 index++;
             }
@@ -122,7 +122,7 @@ namespace DAL
             int index = 0;
             foreach (var el in testers)
             {
-                if (el._testerId == a._testerId)
+                if (el.id == a.id)
                     break;
                 index++;
             }
@@ -134,7 +134,7 @@ namespace DAL
             int index = 0;
             foreach (var el in trainees)
             {
-                if (el._traineeId == a._traineeId)
+                if (el.id == a.id)
                     break;
                 index++;
             }

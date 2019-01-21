@@ -9,8 +9,7 @@ namespace BE
     public class Trainee
     {
         public Trainee() {}
-        int id { get; set; }
-        public int _traineeId { set { id = value; } get { return id; } }
+        public int id { get; set; }
         public string lastName { get; set; }
         public string firstName { get; set;}
         public DateTime birth { get; set; }

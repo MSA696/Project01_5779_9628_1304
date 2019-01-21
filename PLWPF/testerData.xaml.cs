@@ -28,26 +28,28 @@ namespace PLWPF
             tester = new BE.Tester();
             this.addGrid.DataContext = tester;
             bl = BL.factoryBL.BLGetInstance();
-        }
 
-        private void buttonOpenMenu_Click(object sender, RoutedEventArgs e)
-        {
-            buttonOpenMenu.Visibility = Visibility.Collapsed;
-            buttonCloseMenu.Visibility = Visibility.Visible;
+            this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
+            this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
+            this.comboBoxGearType.ItemsSource = Enum.GetValues(typeof(BE.gear_Box));
         }
-
-        private void buttonCloseMenu_Click(object sender, RoutedEventArgs e)
-        {
-            buttonOpenMenu.Visibility = Visibility.Visible;
-            buttonCloseMenu.Visibility = Visibility.Collapsed;
-        }
-
+        
         private void addTester_Click(object sender, RoutedEventArgs e)
         {
-            bl.addTester(tester);
-            tester = new BE.Tester();
-            this.addGrid.DataContext = tester;
-            addGrid.Visibility = Visibility.Collapsed;
+            try
+            {
+                bl.addTester(tester);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            this.Visibility = Visibility.Collapsed;
+            new testerShow(tester).ShowDialog();
+        }
+        private void buttonLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

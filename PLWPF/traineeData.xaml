@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PLWPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="traineeData" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
+        Title="traineeData" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White" >
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="images/road 2.jpg" Opacity="0.5"/>
@@ -35,30 +35,19 @@
             <Label x:Name="lastNameLable" Content="Last Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="lastNameBox" Foreground="Black" Text="{Binding lastName}" BorderBrush="Black" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="careTypeLable" Content="Care Type" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox Grid.Column="3" Foreground="Black" SelectedValue="{Binding careType}" Grid.Row="1" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1">
-                <ComboBoxItem FontSize="20">Motorcycle</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Private Care</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Truck</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Heavy Truck</ComboBoxItem>
-            </ComboBox>
+            <ComboBox x:Name="comboBoxCarType" Grid.Column="3" Foreground="Black" SelectedValue="{Binding careType}" Grid.Row="1" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="idLable" Content="ID" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="idBox" Foreground="Black" Text="{Binding id}" BorderBrush="Black" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="genderLable" Content="Gender" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox Grid.Column="3" Foreground="Black" Grid.Row="2" SelectedValue="{Binding gender}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1">
-                <ComboBoxItem FontSize="20">Male</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Female</ComboBoxItem>
-            </ComboBox>
+            <ComboBox x:Name="comboBoxGender" Grid.Column="3" Foreground="Black" Grid.Row="2" SelectedItem="{Binding gender}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="birthLable" Content="Date of Birth" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <DatePicker Grid.Column="1" Foreground="Black" SelectedDate="{Binding birth}" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="150" FontSize="18" BorderThickness="1"/>
+            <DatePicker x:Name="datePicker" Grid.Column="1" Foreground="Black" SelectedDate="{Binding birth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"  HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="150" FontSize="18" BorderThickness="1"/>
             <Label x:Name="teacherLable" Content="Teacher" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="teacherBox" Foreground="Black" Text="{Binding teacher}" BorderBrush="Black" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="phoneLable" Content="Phone Number" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="phoneBox" Foreground="Black" Text="{Binding phone}" BorderBrush="Black" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="gearLable" Content="Gear Type" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox Grid.Column="3" Foreground="Black" Grid.Row="5" SelectedValue="{Binding gearBox}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1">
-                <ComboBoxItem FontSize="20">Manual Gear</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Automatic Gear</ComboBoxItem>
-            </ComboBox>
+            <ComboBox x:Name="comboBoxGearType" Grid.Column="3" Foreground="Black" Grid.Row="5" SelectedValue="{Binding gearBox}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="maxDisLable" Content="Max Distance" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="maxDisBox" Foreground="Black" Text="{Binding maxDis}" BorderBrush="Black" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="schoolNameLable" Content="School Name" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
@@ -79,7 +68,7 @@
                         <Button Content="Settings"/>
                         <Button Content="Help"/>
                         <Separator/>
-                        <Button x:Name="buttonLogOut" Content="Log Out"/>
+                        <Button x:Name="buttonLogOut" Content="Log Out" Click="buttonLogOut_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>

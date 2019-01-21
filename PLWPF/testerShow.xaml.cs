@@ -15,33 +15,37 @@ using System.Windows.Shapes;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for traineeShow.xaml
+    /// Interaction logic for testerShow.xaml
     /// </summary>
-    public partial class traineeShow : Window
+    public partial class testerShow : Window
     {
-        BE.Trainee trainee;
+        BE.Tester tester;
         BL.IBL bl;
-        public traineeShow()
+
+        public testerShow()
         {
             InitializeComponent();
-            trainee = new BE.Trainee();
-            this.addGrid.DataContext = trainee;
-            this.showGrid.DataContext = trainee;
+            tester = new BE.Tester();
+            this.saveGrid.DataContext = tester;
+            this.showGrid.DataContext = tester;
             bl = BL.factoryBL.BLGetInstance();
+
             this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
             this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
             this.comboBoxGearType.ItemsSource = Enum.GetValues(typeof(BE.gear_Box));
         }
-        public traineeShow(BE.Trainee t )
+        public testerShow(BE.Tester t)
         {
             InitializeComponent();
-            trainee = t;
-            this.addGrid.DataContext = trainee;
-            this.showGrid.DataContext = trainee;
+            tester = t;
+            this.saveGrid.DataContext = tester;
+            this.showGrid.DataContext = tester;
             bl = BL.factoryBL.BLGetInstance();
+
+            this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
+            this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
+            this.comboBoxGearType.ItemsSource = Enum.GetValues(typeof(BE.gear_Box));
         }
-
-
         private void buttonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
             buttonOpenMenu.Visibility = Visibility.Collapsed;
@@ -56,8 +60,8 @@ namespace PLWPF
 
         private void saveTester_Click(object sender, RoutedEventArgs e)
         {
-            bl.updateTrainee(trainee);
-            addGrid.Visibility = Visibility.Collapsed;
+            bl.updateTester(tester);
+            saveGrid.Visibility = Visibility.Collapsed;
         }
 
         private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -75,12 +79,12 @@ namespace PLWPF
         private void TextBlock_PreviewMouseDown_1(object sender, MouseButtonEventArgs e)
         {
             showGrid.Visibility = Visibility.Collapsed;
-            addGrid.Visibility = Visibility.Visible;
+            saveGrid.Visibility = Visibility.Visible;
         }
         private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
         {
             showGrid.Visibility = Visibility.Collapsed;
-            addGrid.Visibility = Visibility.Visible;
+            saveGrid.Visibility = Visibility.Visible;
         }
 
         private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
@@ -94,16 +98,15 @@ namespace PLWPF
         }
         private void TextBlock_PreviewMouseDown_3(object sender, MouseButtonEventArgs e)
         {
-            addGrid.Visibility = Visibility.Collapsed;
+            saveGrid.Visibility = Visibility.Collapsed;
             showGrid.Visibility = Visibility.Visible;
         }
 
         private void ListViewItem_Selected_3(object sender, RoutedEventArgs e)
         {
-            addGrid.Visibility = Visibility.Collapsed;
+            saveGrid.Visibility = Visibility.Collapsed;
             showGrid.Visibility = Visibility.Visible;
         }
-
         private void buttonLogOut_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

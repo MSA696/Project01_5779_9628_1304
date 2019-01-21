@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MainWindow"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="800">
+        Title="MainWindow" Height="400" Width="800" >
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="images/test drive.jpg"/>

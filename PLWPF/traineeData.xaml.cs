@@ -23,19 +23,33 @@ namespace PLWPF
         BL.IBL bl;
         public traineeData()
         {
-            
-                InitializeComponent();
-                trainee = new BE.Trainee();
-                this.addGrid.DataContext = trainee;
-                bl = BL.factoryBL.BLGetInstance();
-            
+            InitializeComponent();
+            trainee = new BE.Trainee();
+            this.addGrid.DataContext = trainee;
+            bl = BL.factoryBL.BLGetInstance();
+
+            this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
+            this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
+            this.comboBoxGearType.ItemsSource = Enum.GetValues(typeof(BE.gear_Box));
         }
 
         private void addTester_Click(object sender, RoutedEventArgs e)
         {
-            bl.addTrainee(trainee);
+            try
+            {
+                bl.addTrainee(trainee);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             this.Visibility = Visibility.Collapsed;
             new traineeShow(trainee).ShowDialog();
+        }
+
+        private void buttonLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
         
     }

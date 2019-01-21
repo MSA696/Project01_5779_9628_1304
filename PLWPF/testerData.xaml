@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PLWPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="adminData" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
+        Title="testerData" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White" >
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -33,7 +33,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="images/road 2.jpg" Opacity="0.5"/>
         </Grid.Background>
-        <Grid x:Name="addGrid" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige">
+        <Grid x:Name="addGrid" Height="540" Width="1080" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.8">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"/>
                 <ColumnDefinition Width="25*"/>
@@ -56,29 +56,20 @@
             <Label x:Name="lastNameLable" Content="Last Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="LastNameBox" Text="{Binding lastName}" BorderBrush="Black" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="careTypeLable" Content="Care Type" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox Grid.Column="3" Grid.Row="1" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1">
-                <ComboBoxItem FontSize="20">Motorcycle</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Private Care</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Truck</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Heavy Truck</ComboBoxItem>
-            </ComboBox><Label x:Name="idLable" Content="ID" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <ComboBox x:Name="comboBoxCarType" SelectedValue="{Binding careType}" Grid.Column="3" Grid.Row="1" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="idLable" Content="ID" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="idBox" Text="{Binding id}" BorderBrush="Black" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="genderLable" Content="Gender" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox Grid.Column="3" Grid.Row="2" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1">
-                <ComboBoxItem FontSize="20">Male</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Female</ComboBoxItem>
-            </ComboBox>
+            <ComboBox x:Name="comboBoxGender" SelectedItem="{Binding gender}" Grid.Column="3" Grid.Row="2" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="birthLable" Content="Date of Birth" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <DatePicker Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="150" FontSize="18" BorderThickness="1"/>
+            <DatePicker x:Name="datePicker" Grid.Column="1" SelectedDate="{Binding birth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="150" FontSize="18" BorderThickness="1"/>
             <Label x:Name="experienceLable" Content="Experience" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="experienceBox" Text="{Binding experience}" BorderBrush="Black" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="phoneLable" Content="Phone Number" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="phoneBox" Text="{Binding phone}" BorderBrush="Black" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="gearLable" Content="Gear Type" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox Grid.Column="3" Grid.Row="4" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1">
-                <ComboBoxItem FontSize="20">Manual Gear</ComboBoxItem>
-                <ComboBoxItem FontSize="20">Automatic Gear</ComboBoxItem>
-            </ComboBox><Label x:Name="maxDisLable" Content="Max Distance" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <ComboBox x:Name="comboBoxGearType" SelectedItem="{Binding gearBox}" Grid.Column="3" Grid.Row="4" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="maxDisLable" Content="Max Distance" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="maxDisBox" Text="{Binding maxDist}" BorderBrush="Black" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="maxTestsLable" Content="Max Tests" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="maxTestsBox" Text="{Binding maxTests}" BorderBrush="Black" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
@@ -88,54 +79,16 @@
         <Grid Height="60" VerticalAlignment="Top" Background="#FF3A6BB2" >
             <TextBlock Text="welcome Tester" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="bdika" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Account" VerticalAlignment="Center" FontSize="18"/>
                 <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignRightEdges"  StaysOpen="False">
                     <StackPanel Width="150">
                         <Button Content="Account"/>
                         <Button Content="Settings"/>
                         <Button Content="Help"/>
                         <Separator/>
-                        <Button x:Name="buttonLogOut" Content="Log Out"/>
+                        <Button x:Name="buttonLogOut" Content="Log Out" Click="buttonLogOut_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
-            </StackPanel>
-        </Grid>
-        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF373776">
-            <StackPanel>
-                <Grid Height="150" Background="White">
-                    <Button x:Name="buttonCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="buttonCloseMenu_Click">
-                        <materialDesign:PackIcon Foreground="#FF373776" Kind="ArrowLeft" Width="25" Height="25"/>
-                    </Button>
-                    <Button x:Name="buttonOpenMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="buttonOpenMenu_Click">
-                        <materialDesign:PackIcon Foreground="#FF373776" Kind="Menu" Width="25" Height="25"/>
-                    </Button>
-                </Grid>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF3A6BB2">
-                    <ListViewItem Height="60" Background="#FF373776">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60" Background="#FF373776">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Pencil" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Edit" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60" Background="#FF373776">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Check" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Find a Test" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60" Background="#FF373776">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Men" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="View Profile" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                </ListView>
             </StackPanel>
         </Grid>
     </Grid>
