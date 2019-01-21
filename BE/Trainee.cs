@@ -11,7 +11,7 @@ namespace BE
         public Trainee() {}
         public int id { get; set; }
         public string lastName { get; set; }
-        public string firstName { get; set;}
+        public string firstName { get; set; }
         public DateTime birth { get; set; }
         public _gender gender { get; set; }
         public string phone { get; set; }
@@ -22,6 +22,7 @@ namespace BE
         public string teacher { get; set; }
         public int classNum { get; set; }
         public int maxDis { get; set; }
+        //public Tester* myTester { get; set; }
         //another properties by demand
         override public string ToString()
         {

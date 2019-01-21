@@ -33,7 +33,41 @@
         <Grid.Background>
             <ImageBrush ImageSource="images/road 2.jpg" Opacity="0.5"/>
         </Grid.Background>
-        <Grid x:Name="showGrid" Visibility="Collapsed" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.7">
+        <Grid x:Name="findGrid" Visibility="Collapsed" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="testerNameShowLable" Content="First Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerNameShowLableB" Content="{Binding firsName}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerLastNameShowLable" Content="Last Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerLastNameShowLableB" Content="{Binding lastName}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerCareTypeShowLable" Content="Care Type" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerCareTypeShowLableB" Content="{Binding careType}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerGenderShowLable" Content="Gender" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerGenderShowLableB" Content="{Binding gender}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerPhoneShowLable" Content="Phone Number" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerPhoneShowLableB" Content="{Binding phone}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerBirthShowLable" Content="Date of Birth" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerBirthShowLableB" Content="{Binding birth}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerExperienceShowLable" Content="Experience" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerExperienceShowLableB" Content="{Binding experience}" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            
+        </Grid>
+
+            <Grid x:Name="showGrid" Visibility="Visible" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"/>
                 <ColumnDefinition Width="25*"/>

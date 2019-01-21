@@ -21,13 +21,16 @@ namespace PLWPF
     {
         BE.Trainee trainee;
         BL.IBL bl;
+        BE.Tester tester;
         public traineeShow()
         {
             InitializeComponent();
             trainee = new BE.Trainee();
             this.addGrid.DataContext = trainee;
             this.showGrid.DataContext = trainee;
+            this.findGrid.DataContext = tester;
             bl = BL.factoryBL.BLGetInstance();
+
             this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
             this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
             this.comboBoxGearType.ItemsSource = Enum.GetValues(typeof(BE.gear_Box));
@@ -62,44 +65,72 @@ namespace PLWPF
 
         private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
+            findGrid.Visibility = Visibility.Collapsed;
             this.Visibility = Visibility.Collapsed;
             new MainWindow.MainWindow().ShowDialog();
         }
 
         private void ListViewItem_Selected(object sender, RoutedEventArgs e)
         {
+            findGrid.Visibility = Visibility.Collapsed;
             this.Visibility = Visibility.Collapsed;
             new MainWindow.MainWindow().ShowDialog();
         }
 
         private void TextBlock_PreviewMouseDown_1(object sender, MouseButtonEventArgs e)
         {
+            findGrid.Visibility = Visibility.Collapsed;
             showGrid.Visibility = Visibility.Collapsed;
             addGrid.Visibility = Visibility.Visible;
         }
         private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
         {
+            findGrid.Visibility = Visibility.Collapsed;
             showGrid.Visibility = Visibility.Collapsed;
             addGrid.Visibility = Visibility.Visible;
         }
 
         private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
         {
-            //add func
+            /*
+            tester=bl.findTester();
+            if (tester!=null)
+            {
+            trainee.myTester=tester;
+            tester.trainees.push(trainee);
+            }
+
+            */
+            findGrid.Visibility = Visibility.Visible;
+            addGrid.Visibility = Visibility.Collapsed;
+            showGrid.Visibility = Visibility.Collapsed;
         }
 
         private void TextBlock_PreviewMouseDown_2(object sender, MouseButtonEventArgs e)
         {
-            //add func
+            /*
+            tester=bl.findTester();
+            if (tester!=null)
+            {
+            trainee.myTester=tester;
+            tester.trainees.push(trainee);
+            }
+
+            */
+            findGrid.Visibility = Visibility.Visible;
+            addGrid.Visibility = Visibility.Collapsed;
+            showGrid.Visibility = Visibility.Collapsed;
         }
         private void TextBlock_PreviewMouseDown_3(object sender, MouseButtonEventArgs e)
         {
+            findGrid.Visibility = Visibility.Collapsed;
             addGrid.Visibility = Visibility.Collapsed;
             showGrid.Visibility = Visibility.Visible;
         }
 
         private void ListViewItem_Selected_3(object sender, RoutedEventArgs e)
         {
+            findGrid.Visibility = Visibility.Collapsed;
             addGrid.Visibility = Visibility.Collapsed;
             showGrid.Visibility = Visibility.Visible;
         }

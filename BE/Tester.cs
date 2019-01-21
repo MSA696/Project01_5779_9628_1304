@@ -24,6 +24,7 @@ namespace BE
         public int maxDist { get; set; }
         //another properties by demand
         public gear_Box gearBox { get; set; }
+        public List<Trainee> trainees { get; set; }
         override public string ToString()
         {
             return "";//assumption: returns any property of class as String

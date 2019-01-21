@@ -19,9 +19,22 @@ namespace PLWPF
     /// </summary>
     public partial class testerIn : Window
     {
+        BE.Tester tester;
+        BL.IBL bl;
+
         public testerIn()
         {
             InitializeComponent();
+        }
+
+        private void logIn_Click(object sender, RoutedEventArgs e)
+        {
+            //tester = bl.getTester(idBox.Text);
+            if (tester.firstName == nameBox.Text)
+            {
+                this.Visibility = Visibility.Collapsed;
+                new testerShow().ShowDialog();
+            }
         }
     }
 }
