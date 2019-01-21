@@ -92,15 +92,15 @@ namespace PLWPF
 
         private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
         {
-            /*
-            tester=bl.findTester();
-            if (tester!=null)
+
+            tester = bl.FindTester(bl.TesterByDistance(trainee.addr), bl.TesterByDateandtime(trainee.birth));
+            if (tester != null)
             {
-            trainee.myTester=tester;
-            tester.trainees.push(trainee);
+                //trainee.myTester = tester;
+                //tester.trainees.push(trainee);
             }
 
-            */
+
             findGrid.Visibility = Visibility.Visible;
             addGrid.Visibility = Visibility.Collapsed;
             showGrid.Visibility = Visibility.Collapsed;

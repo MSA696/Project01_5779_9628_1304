@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Net;
+using System.Xml;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +11,8 @@ using DAL;
 
 namespace BL
 {
-    
     public class BL_imp: IBL
     {
-        /*DAL.Idal dal;
-        dal = DAL.factoryDAL.GetInstance();*/
         #region Singelton
         protected BL_imp() { }
         static BL_imp BLinstance;
@@ -92,7 +92,13 @@ namespace BL
         public List<Tester> TesterByDistance(address a)
         {
             //in later Phase will use WebRequest, for Phase 1 raffle fit number - what's the meaning?
-            throw new NotImplementedException();
+            List<Tester> testers = new List<Tester>();
+            for (int i = 0; i < (dal.getTesters()).Count; i++)
+            {
+
+            }
+            
+            return testers;
         }
         public List<Tester> TesterByDateandtime(DateTime a)
         {
