@@ -103,7 +103,10 @@ namespace BL
         {
             throw new NotImplementedException();
         }
-        
+        public Tester FindTester(List<Tester> a, List<Tester> b)
+        {
+            throw new NotImplementedException();
+        }
         public int traineeTestCount(Trainee a)
         {
             //return number of tests Trainee did
