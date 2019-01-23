@@ -25,6 +25,12 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition Height="50*"/>
             </Grid.RowDefinitions>
             <Label x:Name="nameLable" Content="First Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
@@ -51,7 +57,44 @@
             <TextBox x:Name="maxDisBox" Text="{Binding maxDist}" BorderBrush="Black" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="maxTestsLable" Content="Max Tests" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <TextBox x:Name="maxTestsBox" Text="{Binding maxTests}" BorderBrush="Black" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Button x:Name="addTester" Content="Add" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="150" Height="60" FontSize="36" Click="addTester_Click"/>
+            <Button x:Name="addTester"  Content="Add" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Width="150" Height="60" FontSize="36" Click="addTester_Click" Margin="60,23,60,15" Grid.RowSpan="4"/>
+            <Label x:Name="workHoursLable" Content="Work Hours:" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <Label x:Name="workHours" Content="9:00 10:00 11:00 12:00 13:00 14:00" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
+            <Label x:Name="sunday" Content="Sunday" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox1_1" Checked="WH00" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox1_2" Checked="WH01" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox1_3" Checked="WH02" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox1_4" Checked="WH03" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox1_5" Checked="WH04" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox1_6" Checked="WH05" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <Label x:Name="monday" Content="Monday" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox2_1" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox2_2" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox2_3" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox2_4" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox2_5" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox2_6" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <Label x:Name="tuesday" Content="Tuesday" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox3_1" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox3_2" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox3_3" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox3_4" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox3_5" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox3_6" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <Label x:Name="wednesday" Content="Wednesday" Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox4_1" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox4_2" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox4_3" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox4_4" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox4_5" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox4_6" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <Label x:Name="Thursday" Content="Thursday" Grid.Column="0" Grid.Row="11" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox5_1" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox5_2" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox5_3" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox5_4" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox5_5" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox5_6" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
 
         </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF3A6BB2" >

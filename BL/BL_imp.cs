@@ -42,8 +42,9 @@ namespace BL
         {
             throw new NotImplementedException();
         }
-        public Tester findTester(int id, List<Tester> a)
+        public Tester findTester(int id)
         {
+            List<Tester> a = dal.getTesters();
             for (int i = 0; i < a.Count; i++)
                 if (a[i].id == id)
                     return a[i];
@@ -62,8 +63,9 @@ namespace BL
         {
             throw new NotImplementedException();
         }
-        public Trainee findTrainee(int id, List<Trainee> a)
+        public Trainee findTrainee(int id)
         {
+            List<Trainee> a = dal.getTrainees();
             for (int i = 0; i < a.Count; i++)
                 if (a[i].id == id)
                     return a[i];

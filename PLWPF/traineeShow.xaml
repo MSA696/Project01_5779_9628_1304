@@ -33,7 +33,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="images/road 2.jpg" Opacity="0.5"/>
         </Grid.Background>
-        <Grid x:Name="findGrid" Visibility="Collapsed" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.7">
+        <Grid x:Name="findGrid" Visibility="Visible" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"/>
                 <ColumnDefinition Width="25*"/>
@@ -67,7 +67,7 @@
             
         </Grid>
 
-            <Grid x:Name="showGrid" Visibility="Visible" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.7">
+            <Grid x:Name="showGrid" Visibility="Collapsed" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"/>
                 <ColumnDefinition Width="25*"/>

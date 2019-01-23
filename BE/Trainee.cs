@@ -22,7 +22,7 @@ namespace BE
         public string teacher { get; set; }
         public int classNum { get; set; }
         public int maxDis { get; set; }
-        //public Tester* myTester { get; set; }
+        public Tester myTester { get; set; }
         //another properties by demand
         public int TestsNum { get; set; }
 

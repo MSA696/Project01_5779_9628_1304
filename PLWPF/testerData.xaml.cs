@@ -51,5 +51,36 @@ namespace PLWPF
         {
             Application.Current.Shutdown();
         }
+        
+
+        private void WH00(object sender, RoutedEventArgs e)
+        {
+            tester.workHour[0, 0] = true;
+        }
+
+        private void WH01(object sender, RoutedEventArgs e)
+        {
+            tester.workHour[0, 1] = true;
+        }
+
+        private void WH02(object sender, RoutedEventArgs e)
+        {
+            tester.workHour[0, 2] = true;
+        }
+
+        private void WH03(object sender, RoutedEventArgs e)
+        {
+            tester.workHour[0, 3] = true;
+        }
+
+        private void WH04(object sender, RoutedEventArgs e)
+        {
+            tester.workHour[0, 4] = true;
+        }
+
+        private void WH05(object sender, RoutedEventArgs e)
+        {
+            tester.workHour[0, 5] = true;
+        }
     }
 }

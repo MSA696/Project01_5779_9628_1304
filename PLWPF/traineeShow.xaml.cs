@@ -31,7 +31,7 @@ namespace PLWPF
             bl = BL.factoryBL.BLGetInstance();
             this.addGrid.DataContext = trainee;
             this.showGrid.DataContext = trainee;
-            this.findGrid.DataContext = bl.findTester(test.testerId, bl.getTesters());
+            this.findGrid.DataContext = bl.findTester(test.testerId);
 
             this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
             this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
@@ -95,11 +95,12 @@ namespace PLWPF
         private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
         {
 
-            tester = bl.FindTester(bl.TesterByDistance(trainee.addr), bl.TesterByDateandtime(trainee.birth));
-            if (tester != null)
+            test.testerId = bl.TesterByDateandtime(test.testDate, bl.TesterByDistance(test.beginOfTestAdr, trainee.maxDis))[0].id;
+            if (test.testerId!=0)
             {
-                //trainee.myTester = tester;
-                //tester.trainees.push(trainee);
+                trainee.myTester = bl.findTester(test.testerId);
+                trainee.myTester.trainees.Add(trainee);
+                bl.updateTester(bl.findTester(trainee.myTester.id));
             }
 
 

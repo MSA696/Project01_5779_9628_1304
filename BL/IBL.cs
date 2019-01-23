@@ -12,12 +12,12 @@ namespace BL
         void addTester(Tester a);
         void deleteTester(Tester a);
         Tester updateTester(Tester a); //not sure about the recive and returned parameters
-        Tester findTester(int id, List<Tester> a);
+        Tester findTester(int id);
 
         void addTrainee(Trainee a);
         void deleteTrainee(Trainee a);
         Trainee updateTrainee(Trainee a); //not sure about the recive and returned parameters
-        Trainee findTrainee(int id, List<Trainee> a);
+        Trainee findTrainee(int id);
 
         void addTest(Test a);
         Test updateTest(Test a); //not sure about the recive and returned parameters
