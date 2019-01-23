@@ -31,16 +31,27 @@ namespace BL
         #region InterfaceImplement
         public void addTester(Tester a)
         {
-            //no option to add tester above MaxAge implementation
+            List<Tester> tmp = dal.getTesters();
+            for (int i = 0; i < tmp.Count; i++)
+            {
+                if (tmp[i].id == a.id)
+                    throw new Exception("the tester exists");
+            }
             dal.addTester(a);
         }
         public void deleteTester(Tester a)
         {
-            dal.deleteTester(a);
+            if(boolFindTester(a.id))
+                dal.deleteTester(a);
         }
-        public Tester updateTester(Tester a)
+        public void updateTester(Tester a)
         {
-            throw new NotImplementedException();
+            List<Tester> tmp = dal.getTesters();
+            for (int i = 0; i < tmp.Count; i++)
+            {
+                if (tmp[i].id == a.id)
+                    tmp[i] = a;
+            }
         }
         public Tester findTester(int id)
         {
@@ -50,18 +61,38 @@ namespace BL
                     return a[i];
             throw new InvalidDataException("there is no tester with this id");
         }
+
+        public bool boolFindTester(int id)
+        {
+            List<Tester> a = dal.getTesters();
+            for (int i = 0; i < a.Count; i++)
+                if (a[i].id == id)
+                    return true;
+            return false;
+        }
         public void addTrainee(Trainee a)
         {
-            //no option to add trainee beneath MinAge implementation
+            List<Trainee> tmp = dal.getTrainees();
+            for (int i = 0; i < tmp.Count; i++)
+            {
+                if (tmp[i].id == a.id)
+                    throw new Exception("the trainee exists");
+            }
             dal.addTrainee(a);
         }
         public void deleteTrainee(Trainee a)
         {
-            dal.deleteTrainee(a);
+            if(boolFindTrainee(a.id))
+                dal.deleteTrainee(a);
         }
-        public Trainee updateTrainee(Trainee a)
+        public void updateTrainee(Trainee a)
         {
-            throw new NotImplementedException();
+            List<Trainee> tmp = dal.getTrainees();
+            for (int i = 0; i < tmp.Count; i++)
+            {
+                if (tmp[i].id == a.id)
+                    tmp[i] = a;
+            }
         }
         public Trainee findTrainee(int id)
         {
@@ -71,23 +102,32 @@ namespace BL
                     return a[i];
             throw new InvalidDataException("there is no trainee with this id");
         }
+        public bool boolFindTrainee(int id)
+        {
+            List<Trainee> a = dal.getTrainees();
+            for (int i = 0; i < a.Count; i++)
+                if (a[i].id == id)
+                    return true;
+            return false;
+        }
         public void addTest(Test a)
         {
-            //no option to add test if 7 days didn't past from trainee's last test implementation
-            //no option to add test if did less then 20 drive-classes implementation
-            /*no option to add test if there is no available Tester for the date requested implementation
-              in this case- the system can offer alternate date for test*/
-            //no option to add testerId to test if Tester's maxWeeklyTests is reached implementation
-            //make sure there isn't two tests in the same time for the same trainee/tester. 
-            //no option to add test if trainee already succesfuly passed test in same carType implementation
-            //make sure to fit tester to trainee by carType
+            List<Test> tmp = dal.getTests();
+            for (int i = 0; i < tmp.Count; i++)
+            {
+                if (tmp[i].testId == a.testId)
+                    throw new Exception("the test exists");
+            }
             dal.addTest(a);
         }
-        public Test updateTest(Test a)
+        public void updateTest(Test a)
         {
-            /*no option to update test if all testers field isn't fill implementation
-              notice: need to think how to do it whitout disabling Tester approch to his filled*/
-            throw new NotImplementedException();
+            List<Test> tmp = dal.getTests();
+            for (int i = 0; i < tmp.Count; i++)
+            {
+                if (tmp[i].testId == a.testId)
+                    tmp[i] = a;
+            }
         }
         public bool dateTestAvailable(DateTime a)
         {
@@ -97,10 +137,24 @@ namespace BL
                     return false;
             return true;
         }
-
+        
+        public Tester findTester(address traineeAddr, int maxDis, DateTime testDate, days testDay, hours testHours, car_Type carType)
+        {
+            Tester tester = new Tester();
+            List<Tester> testers = new List<Tester>();
+            List<Tester> tmp = TesterByDistance(traineeAddr, maxDis);
+            testers = TesterByDateandtime(testDate, testDay, testHours, tmp);
+            for(int i=0;i<testers.Count;i++)
+            {
+                if(testers[i].carType==carType)
+                {
+                    return testers[i];
+                }
+            }
+            throw new NotFiniteNumberException("there is no tester available");
+        }
         public List<Tester> getTesters()
         {
-            //return (_DAL.getTesters());
             return dal.getTesters();
         }        
         public List<Trainee> getTrainees()
@@ -110,7 +164,7 @@ namespace BL
 
         public List<Test> getTests()
         {
-            return getTests();
+            return dal.getTests();
         }
 
         public List<Tester> TesterByDistance(address traineeAddr, int maxDis)
@@ -129,13 +183,13 @@ namespace BL
             List<Tester> tmp = new List<Tester>();
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i].workHour[Convert.ToInt32(testDay) , Convert.ToInt32(testHour)])///////////func to check if the tester is available
+                if (list[i].workHour[Convert.ToInt32(testDay) , Convert.ToInt32(testHour)])
                     if(dateTestAvailable(testDate))
                         tmp.Add(list[i]);
             }
             return tmp;
         }
-        public bool TestByCondition(Delegate a)
+        public bool TestByCondition(Delegate a)///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         {
             throw new NotImplementedException();
         }
@@ -187,15 +241,11 @@ namespace BL
                 throw new InvalidDataException("We have'nt got an answer");
             }
         }
-
-        public Tester FindTester(List<Tester> a, List<Tester> b)
-        {
-            throw new NotImplementedException();
-        }
+        
         public int traineeTestCount(Trainee a)
         {
             //return number of tests Trainee did
-            return a.TestsNum;           //צריך לדאוג: א'-לאפס את השדה ביצירת התלמיד. ב'-שבכל פעם שמייצרים (בהצלחה) טסט לתלמיד להגדיל את הערך הזה ב1
+            return a.testsNum;
         }
         public bool traineeScore(Trainee a)
         {
@@ -204,12 +254,12 @@ namespace BL
             {
                 if (tmp[i].traineeId == a.id) return tmp[i].score;
             }
-            throw new Exception(); //צריך לעשות כאן חריגה שעוברת ליו.איי. ומודיע לה שלא נמצא מבחן שעשה התלמיד הנ"ל
+            return false;
         }
         public List<Test> testSortList()
         {
             //return list of all tests sorted by day/month
-            throw new NotImplementedException();
+            throw new NotImplementedException();//////////////////////////////////////////////////////////////////////////////////////
         }      
                 
         #endregion

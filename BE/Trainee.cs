@@ -8,7 +8,7 @@ namespace BE
 {
     public class Trainee
     {
-        public Trainee() {}
+        
         public int id { get; set; }
         public string lastName { get; set; }
         public string firstName { get; set; }
@@ -24,11 +24,13 @@ namespace BE
         public int maxDis { get; set; }
         public Tester myTester { get; set; }
         //another properties by demand
-        public int TestsNum { get; set; }
+        public int testsNum { get; set; }
         public days testDey { get; set; }
         public hours testHour { get; set; }
-
-
+        public Trainee()
+        {
+            testsNum = 0;
+        }
         override public string ToString()
         {
             return "";//assumption: returns any property of class as String

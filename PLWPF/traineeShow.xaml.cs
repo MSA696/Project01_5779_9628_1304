@@ -30,7 +30,6 @@ namespace PLWPF
             bl = BL.factoryBL.BLGetInstance();
             this.addGrid.DataContext = trainee;
             this.showGrid.DataContext = trainee;
-            this.findGrid.DataContext = bl.findTester(test.testerId);
 
             this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
             this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
@@ -44,7 +43,6 @@ namespace PLWPF
             bl = BL.factoryBL.BLGetInstance();
             this.addGrid.DataContext = trainee;
             this.showGrid.DataContext = trainee;
-            this.findGrid.DataContext = bl.findTester(test.testerId);
 
             this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
             this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
@@ -100,12 +98,14 @@ namespace PLWPF
         private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
         {
 
+            this.findGrid.DataContext = bl.findTester(test.testerId);
             test = new BE.Test();
             test.testerId = bl.TesterByDateandtime(test.testDate, test.testDey, test.testHour, bl.TesterByDistance(test.beginOfTestAdr, trainee.maxDis))[0].id;
             if (test.testerId!=0)
             {
                 trainee.myTester = bl.findTester(test.testerId);
                 trainee.myTester.trainees.Add(trainee);
+                trainee.testsNum += 1;
                 bl.updateTester(bl.findTester(trainee.myTester.id));
                 bl.addTest(test);
             }
@@ -118,12 +118,15 @@ namespace PLWPF
 
         private void TextBlock_PreviewMouseDown_2(object sender, MouseButtonEventArgs e)
         {
+
+            this.findGrid.DataContext = bl.findTester(test.testerId);
             test = new BE.Test();
-            test.testerId = bl.TesterByDateandtime(test.testDate, test.testDey, test.testHour, bl.TesterByDistance(test.beginOfTestAdr, trainee.maxDis))[0].id;
+            test.testerId = bl.TesterByDateandtime(test.testDate, trainee.testDey, trainee.testHour, bl.TesterByDistance(test.beginOfTestAdr, trainee.maxDis))[0].id;
             if (test.testerId != 0)
             {
                 trainee.myTester = bl.findTester(test.testerId);
                 trainee.myTester.trainees.Add(trainee);
+                trainee.testsNum += 1;
                 bl.updateTester(bl.findTester(trainee.myTester.id));
                 bl.addTest(test);
             }

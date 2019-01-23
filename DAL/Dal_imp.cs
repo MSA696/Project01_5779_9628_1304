@@ -34,7 +34,7 @@ namespace DAL
             {
                 if (tests.Contains(a))
                 {
-                    //throw new Exception
+                    throw new Exception();
                 }
                 a.testId = Configuration.firstNum;
                 Configuration.firstNum++;
@@ -52,7 +52,7 @@ namespace DAL
             {
                 if (testers.Contains(a))
                 {
-                    //throw new Exception
+                    throw new Exception();
                 }
                 testers.Add(a);
             }
@@ -68,13 +68,13 @@ namespace DAL
             {
                 if (trainees.Contains(a))
                 {
-                    //throw new Exception
+                    throw new Exception();
                 }
                 trainees.Add(a);
             }
             catch (Exception)
             {
-                Console.WriteLine("The Tester exist ");
+                Console.WriteLine("The Trainee exist ");
             }
         }
 
