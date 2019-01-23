@@ -21,13 +21,14 @@ namespace BL
 
         void addTest(Test a);
         Test updateTest(Test a); //not sure about the recive and returned parameters
+        bool dateTestAvailable(DateTime a);
 
         List<Tester> getTesters();
         List<Trainee> getTrainees();
         List<Test> getTests(); 
 
         List<Tester> TesterByDistance(address traineeAddr, int maxDis);
-        List<Tester> TesterByDateandtime(DateTime a, List<Tester> list);
+        List<Tester> TesterByDateandtime(DateTime testDate, days testDay ,hours testHours , List<Tester> list);
         bool TestByCondition(Delegate a);//<--!!didn't understand the demand "kol ha'mivhanim"
         int checkDis(address a, address b);
 

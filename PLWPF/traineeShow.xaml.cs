@@ -26,7 +26,6 @@ namespace PLWPF
         {
             InitializeComponent();
             trainee = new BE.Trainee();
-            test = new BE.Test();
 
             bl = BL.factoryBL.BLGetInstance();
             this.addGrid.DataContext = trainee;
@@ -41,9 +40,15 @@ namespace PLWPF
         {
             InitializeComponent();
             trainee = t;
+
+            bl = BL.factoryBL.BLGetInstance();
             this.addGrid.DataContext = trainee;
             this.showGrid.DataContext = trainee;
-            bl = BL.factoryBL.BLGetInstance();
+            this.findGrid.DataContext = bl.findTester(test.testerId);
+
+            this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
+            this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
+            this.comboBoxGearType.ItemsSource = Enum.GetValues(typeof(BE.gear_Box));
         }
 
 
@@ -95,12 +100,14 @@ namespace PLWPF
         private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
         {
 
-            test.testerId = bl.TesterByDateandtime(test.testDate, bl.TesterByDistance(test.beginOfTestAdr, trainee.maxDis))[0].id;
+            test = new BE.Test();
+            test.testerId = bl.TesterByDateandtime(test.testDate, test.testDey, test.testHour, bl.TesterByDistance(test.beginOfTestAdr, trainee.maxDis))[0].id;
             if (test.testerId!=0)
             {
                 trainee.myTester = bl.findTester(test.testerId);
                 trainee.myTester.trainees.Add(trainee);
                 bl.updateTester(bl.findTester(trainee.myTester.id));
+                bl.addTest(test);
             }
 
 
@@ -111,15 +118,17 @@ namespace PLWPF
 
         private void TextBlock_PreviewMouseDown_2(object sender, MouseButtonEventArgs e)
         {
-            /*
-            tester=bl.findTester();
-            if (tester!=null)
+            test = new BE.Test();
+            test.testerId = bl.TesterByDateandtime(test.testDate, test.testDey, test.testHour, bl.TesterByDistance(test.beginOfTestAdr, trainee.maxDis))[0].id;
+            if (test.testerId != 0)
             {
-            trainee.myTester=tester;
-            tester.trainees.push(trainee);
+                trainee.myTester = bl.findTester(test.testerId);
+                trainee.myTester.trainees.Add(trainee);
+                bl.updateTester(bl.findTester(trainee.myTester.id));
+                bl.addTest(test);
             }
 
-            */
+
             findGrid.Visibility = Visibility.Visible;
             addGrid.Visibility = Visibility.Collapsed;
             showGrid.Visibility = Visibility.Collapsed;

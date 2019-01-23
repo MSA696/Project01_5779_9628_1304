@@ -25,6 +25,9 @@ namespace BE
         public Tester myTester { get; set; }
         //another properties by demand
         public int TestsNum { get; set; }
+        public days testDey { get; set; }
+        public hours testHour { get; set; }
+
 
         override public string ToString()
         {

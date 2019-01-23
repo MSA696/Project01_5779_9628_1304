@@ -89,6 +89,14 @@ namespace BL
               notice: need to think how to do it whitout disabling Tester approch to his filled*/
             throw new NotImplementedException();
         }
+        public bool dateTestAvailable(DateTime a)
+        {
+            List<Test> list = dal.getTests();
+            for (int i = 0; i < list.Count; i++)
+                if (list[i].testDate == a)
+                    return false;
+            return true;
+        }
 
         public List<Tester> getTesters()
         {
@@ -116,13 +124,14 @@ namespace BL
             }
             return tmp;
         }
-        public List<Tester> TesterByDateandtime(DateTime a, List<Tester> list)
+        public List<Tester> TesterByDateandtime(DateTime testDate, days testDay, hours testHour,List<Tester> list)
         {
             List<Tester> tmp = new List<Tester>();
             for (int i = 0; i < list.Count; i++)
             {
-                if (true)///////////func to check if the tester is available
-                    tmp.Add(list[i]);
+                if (list[i].workHour[Convert.ToInt32(testDay) , Convert.ToInt32(testHour)])///////////func to check if the tester is available
+                    if(dateTestAvailable(testDate))
+                        tmp.Add(list[i]);
             }
             return tmp;
         }

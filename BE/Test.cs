@@ -13,7 +13,9 @@ namespace BE
         public int testerId { get; set; }
         public int traineeId { get; set; }
         public DateTime testDate { get; set; }  //by trainee input
-        public DateTime dateAndHour { get; set; } //the time for a test is always 1 hour
+        //public DateTime dateAndHour { get; set; } //the time for a test is always 1 hour
+        public days testDey { get; set; }
+        public hours testHour { get; set; }
         public address beginOfTestAdr { get; set; }     //by trainee input
         public bool keepDis { get; set; }
         public bool reversePark { get; set; }

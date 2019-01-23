@@ -31,6 +31,8 @@ namespace PLWPF
             this.comboBoxGender.ItemsSource = Enum.GetValues(typeof(BE._gender));
             this.comboBoxCarType.ItemsSource = Enum.GetValues(typeof(BE.car_Type));
             this.comboBoxGearType.ItemsSource = Enum.GetValues(typeof(BE.gear_Box));
+            this.comboBoxTestDay.ItemsSource = Enum.GetValues(typeof(BE.days));
+            this.comboBoxTestHour.ItemsSource = Enum.GetValues(typeof(BE.hours));
         }
 
         private void addTester_Click(object sender, RoutedEventArgs e)
