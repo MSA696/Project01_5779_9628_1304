@@ -13,13 +13,13 @@ namespace BE
         static int minTesterAge = 40;
         static int minTraineeAge = 18;
         static int TestRange = 7;
-        public static int firstNum = 0;
+        public static int firstNum = 1;
     }
     public struct address
     {
-        public string city;
-        public string street;
-        public int building;
+        public string city { get; set; }
+        public string street { get; set; }
+        public int building { get; set; }
     }
 }
 

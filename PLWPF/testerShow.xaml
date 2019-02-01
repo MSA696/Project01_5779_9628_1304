@@ -33,7 +33,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="images/road 2.jpg" Opacity="0.5"/>
         </Grid.Background>
-        <Grid x:Name="showGrid" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.8">
+        <Grid x:Name="showGrid" Height="540" Visibility="Visible" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.8">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"/>
                 <ColumnDefinition Width="25*"/>
@@ -41,12 +41,13 @@
                 <ColumnDefinition Width="25*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
@@ -56,22 +57,22 @@
                 <RowDefinition Height="50*"/>
             </Grid.RowDefinitions>
             <Label x:Name="nameShowLable" Content="First Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="nameShowLableB" Content="{Binding firsName}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="nameShowLableB" Content="{Binding firstName}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
-            <Label x:Name="addressShowLable" Content="Adrress" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="addressShowLableB" Content="{Binding addr}" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="cityAddressShowLable" Content="City" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="cityAddressShowLableB" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+
+            <Label x:Name="streetAddressShowLable" Content="Street" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="streetAddressShowLableB" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+
+            <Label x:Name="buildingNumShowLable" Content="Building" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="buildingNumShowLableB" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
             <Label x:Name="lastNameShowLable" Content="Last Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="lastNameShowLableB" Content="{Binding lastName}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
-            <Label x:Name="careTypeShowLable" Content="Care Type" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="careTypeShowLableB" Content="{Binding careType}" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-
             <Label x:Name="idShowLable" Content="ID" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="idShowLableB" Content="{Binding id}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-
-            <Label x:Name="genderShowLable" Content="Gender" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="genderShowLableB" Content="{Binding gender}" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
             <Label x:Name="birthShowLable" Content="Date of Birth" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="birthShowLableB" Content="{Binding birth}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
@@ -82,52 +83,58 @@
             <Label x:Name="phoneShowLable" Content="Phone Number" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="phoneShowLableB" Content="{Binding phone}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
+            <Label x:Name="genderShowLable" Content="Gender" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="genderShowLableB" Content="{Binding gender}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+
             <Label x:Name="gearShowLable" Content="Gear Type" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="gearShowLableB" Content="{Binding gearBox}" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
-            <Label x:Name="maxDisShowLable" Content="Max Distance" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="maxDisShowLableB" Content="{Binding maxDist}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="careTypeShowLable" Content="Care Type" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="careTypeShowLableB" Content="{Binding carType}" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
             <Label x:Name="maxTestsShowLable" Content="Max Tests" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="maxTestsShowLableB" Content="{Binding maxTests}" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+           
+            <Label x:Name="maxDisShowLable" Content="Max Distance" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="maxDisShowLableB" Content="{Binding maxDist}" Grid.Column="3" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
-            <Label x:Name="workHoursLable" Content="Work Hours:" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
-            <Label x:Name="workHours" Content="9:00 10:00 11:00 12:00 13:00 14:00" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
-            <Label x:Name="sunday" Content="Sunday" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
-            <CheckBox x:Name="checkBox1_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="7" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox1_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="7" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox1_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="7" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox1_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="7" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox1_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="7" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox1_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="7" VerticalAlignment="Top" Opacity="1"/>
-            <Label x:Name="monday" Content="Monday" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
-            <CheckBox x:Name="checkBox2_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox2_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox2_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox2_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox2_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox2_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
-            <Label x:Name="tuesday" Content="Tuesday" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
-            <CheckBox x:Name="checkBox3_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox3_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox3_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox3_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox3_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox3_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
-            <Label x:Name="wednesday" Content="Wednesday" Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
-            <CheckBox x:Name="checkBox4_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox4_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox4_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox4_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox4_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox4_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
-            <Label x:Name="Thursday" Content="Thursday" Grid.Column="0" Grid.Row="11" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
-            <CheckBox x:Name="checkBox5_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox5_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox5_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox5_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox5_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
-            <CheckBox x:Name="checkBox5_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
+            <Label x:Name="workHoursLable" Content="Work Hours:" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <Label x:Name="workHours" Content="9:00 10:00 11:00 12:00 13:00 14:00" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
+            <Label x:Name="sunday" Content="Sunday" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox1_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox1_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox1_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox1_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox1_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox1_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="8" VerticalAlignment="Top" Opacity="1"/>
+            <Label x:Name="monday" Content="Monday" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox2_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox2_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox2_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox2_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox2_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox2_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="9" VerticalAlignment="Top" Opacity="1"/>
+            <Label x:Name="tuesday" Content="Tuesday" Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox3_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox3_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox3_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox3_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox3_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox3_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="10" VerticalAlignment="Top" Opacity="1"/>
+            <Label x:Name="wednesday" Content="Wednesday" Grid.Column="0" Grid.Row="11" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox4_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox4_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox4_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox4_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox4_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox4_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="11" VerticalAlignment="Top" Opacity="1"/>
+            <Label x:Name="Thursday" Content="Thursday" Grid.Column="0" Grid.Row="12" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="checkBox5_1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="12" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox5_2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="12" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox5_3" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="12" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox5_4" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="12" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox5_5" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="12" VerticalAlignment="Top" Opacity="1"/>
+            <CheckBox x:Name="checkBox5_6" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="12" VerticalAlignment="Top" Opacity="1"/>
 
         </Grid>
         <Grid x:Name="saveGrid" Visibility="Collapsed" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige">
@@ -144,51 +151,96 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition Height="50*"/>
             </Grid.RowDefinitions>
             <Label x:Name="nameLable" Content="First Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="firstNameBox" Text="{Binding firstName}" BorderBrush="Black" Grid.Column="1" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150"  BorderThickness="1"/>
+            <Label x:Name="nameSaveLable" Content="{Binding firsName}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="addressLable" Content="Adrress" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="addressBox" Text="{Binding addr}" BorderBrush="Black" Grid.Column="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150"  BorderThickness="1"/>
+            <TextBox x:Name="addressBox" Text="{Binding addr}" Foreground="Black" BorderBrush="Black" Grid.Column="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150"  BorderThickness="1"/>
             <Label x:Name="lastNameLable" Content="Last Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="LastNameBox" Text="{Binding lastName}" BorderBrush="Black" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="lastNameSaveLable" Content="{Binding lastName}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="careTypeLable" Content="Care Type" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox x:Name="comboBoxCarType" SelectedItem="{Binding carType}" Grid.Column="3" Grid.Row="1" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <ComboBox x:Name="comboBoxCarType" SelectedItem="{Binding carType}" Foreground="Black" Grid.Column="3" Grid.Row="1" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="idLable" Content="ID" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="idBox" Text="{Binding id}" BorderBrush="Black" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="idSaveLable" Content="{Binding id}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="genderLable" Content="Gender" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox x:Name="comboBoxGender" SelectedItem="{Binding gender}" Grid.Column="3" Grid.Row="2" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <ComboBox x:Name="comboBoxGender" SelectedItem="{Binding gender}" Foreground="Black" Grid.Column="3" Grid.Row="2" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="birthLable" Content="Date of Birth" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <DatePicker x:Name="datePicker" SelectedDate="{Binding birth}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="150" FontSize="18" BorderThickness="1"/>
+            <DatePicker x:Name="datePicker" SelectedDate="{Binding birth}" Foreground="Black" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="150" FontSize="18" BorderThickness="1"/>
             <Label x:Name="experienceLable" Content="Experience" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="experienceBox" Text="{Binding experience}" BorderBrush="Black" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <TextBox x:Name="experienceBox" Text="{Binding experience}" Foreground="Black" BorderBrush="Black" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="phoneLable" Content="Phone Number" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="phoneBox" Text="{Binding phone}" BorderBrush="Black" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <TextBox x:Name="phoneBox" Text="{Binding phone}" Foreground="Black" BorderBrush="Black" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="gearLable" Content="Gear Type" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox x:Name="comboBoxGearType" SelectedItem="{Binding gearBox}" Grid.Column="3" Grid.Row="4" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <ComboBox x:Name="comboBoxGearType" SelectedItem="{Binding gearBox}" Foreground="Black" Grid.Column="3" Grid.Row="4" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="maxDisLable" Content="Max Distance" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="maxDisBox" Text="{Binding maxDist}" BorderBrush="Black" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <TextBox x:Name="maxDisBox" Text="{Binding maxDist}" Foreground="Black" BorderBrush="Black" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="maxTestsLable" Content="Max Tests" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="maxTestsBox" Text="{Binding maxTests}" BorderBrush="Black" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Button x:Name="saveTester" Content="Save" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="150" Height="60" FontSize="36" Click="saveTester_Click"/>
+            <TextBox x:Name="maxTestsBox" Text="{Binding maxTests}" BorderBrush="Black" Foreground="Black" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+
+            <Label x:Name="workHoursShowLable" Content="Work Hours:" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <Label x:Name="workHoursShow" Content="9:00 10:00 11:00 12:00 13:00 14:00" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
+            <Label x:Name="sundayShow" Content="Sunday" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="ShowCheckBox1_1" Checked="WH00" Unchecked="WH00not" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox1_2" Checked="WH01" Unchecked="WH01not" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox1_3" Checked="WH02" Unchecked="WH02not" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox1_4" Checked="WH03" Unchecked="WH03not" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox1_5" Checked="WH04" Unchecked="WH04not" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox1_6" Checked="WH05" Unchecked="WH05not" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+            <Label x:Name="mondayShow" Content="Monday" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="ShowCheckBox2_1" Checked="WH10" Unchecked="WH10not" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox2_2" Checked="WH11" Unchecked="WH11not" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox2_3" Checked="WH12" Unchecked="WH12not" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox2_4" Checked="WH13" Unchecked="WH13not" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox2_5" Checked="WH14" Unchecked="WH14not" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox2_6" Checked="WH15" Unchecked="WH15not" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="8" VerticalAlignment="Top"/>
+            <Label x:Name="tuesdayShow" Content="Tuesday" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="ShowCheckBox3_1" Checked="WH20" Unchecked="WH20not" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox3_2" Checked="WH21" Unchecked="WH21not" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox3_3" Checked="WH22" Unchecked="WH22not" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox3_4" Checked="WH23" Unchecked="WH23not" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox3_5" Checked="WH24" Unchecked="WH24not" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox3_6" Checked="WH25" Unchecked="WH25not" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="9" VerticalAlignment="Top"/>
+            <Label x:Name="wednesdayShow" Content="Wednesday" Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="ShowCheckBox4_1" Checked="WH30" Unchecked="WH30not" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox4_2" Checked="WH31" Unchecked="WH31not" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox4_3" Checked="WH32" Unchecked="WH32not" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox4_4" Checked="WH33" Unchecked="WH33not" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox4_5" Checked="WH34" Unchecked="WH34not" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox4_6" Checked="WH35" Unchecked="WH35not" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="10" VerticalAlignment="Top"/>
+            <Label x:Name="ThursdayShow" Content="Thursday" Grid.Column="0" Grid.Row="11" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="ShowCheckBox5_1" Checked="WH40" Unchecked="WH40not" Grid.Column="1" HorizontalAlignment="Left" Margin="35,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox5_2" Checked="WH41" Unchecked="WH41not" Grid.Column="1" HorizontalAlignment="Left" Margin="70,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox5_3" Checked="WH42" Unchecked="WH42not" Grid.Column="1" HorizontalAlignment="Left" Margin="105,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox5_4" Checked="WH43" Unchecked="WH43not" Grid.Column="1" HorizontalAlignment="Left" Margin="140,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox5_5" Checked="WH44" Unchecked="WH44not" Grid.Column="1" HorizontalAlignment="Left" Margin="175,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ShowCheckBox5_6" Checked="WH45" Unchecked="WH45not" Grid.Column="1" HorizontalAlignment="Left" Margin="210,5,0,0" Grid.Row="11" VerticalAlignment="Top"/>
+
+
+            <Button x:Name="saveTester" Content="Save" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="150" Height="62" FontSize="36" Click="saveTester_Click" Margin="53,13,52,15" Grid.RowSpan="3" BorderBrush="Black" Foreground="Black" Background="#FFFF0909"/>
+            <Button x:Name="deleteTester" Content="Delete" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="150" Height="60" FontSize="36" Click="deleteTester_Click" Grid.RowSpan="3" BorderBrush="Black" Foreground="Black" Background="#FFFF0909"/>
 
         </Grid>
-        <Grid Height="60" VerticalAlignment="Top" Background="#FF3A6BB2" >
+        <Grid Height="60" VerticalAlignment="Top" Background="#FFD12E2E" >
             <TextBlock Text="welcome Tester" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="bdika" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Account" VerticalAlignment="Center" FontSize="18"/>
                 <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignRightEdges"  StaysOpen="False">
                     <StackPanel Width="150">
-                        <Button Content="Account"/>
-                        <Button Content="Settings"/>
-                        <Button Content="Help"/>
+                        <Button Content="Contact us"/>
                         <Separator/>
-                        <Button x:Name="buttonLogOut" Content="Log Out" Click="buttonLogOut_Click"/>
+                        <Button x:Name="buttonLogOut" Content="Exit" Click="buttonLogOut_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
         </Grid>
-        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF373776">
+        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF780F0F">
             <StackPanel>
                 <Grid Height="150" Background="White">
                     <Button x:Name="buttonCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="buttonCloseMenu_Click">
@@ -199,28 +251,28 @@
                     </Button>
                 </Grid>
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF3A6BB2">
-                    <ListViewItem Height="60" Background="#FF373776">
+                    <ListViewItem Height="60" Background="#FF780F0F" Selected="ListViewItem_Selected">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Home" PreviewMouseDown="TextBlock_PreviewMouseDown"  VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60" Background="#FF373776">
+                    <ListViewItem Height="60" Background="#FF780F0F" Selected="ListViewItem_Selected_1">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Pencil" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Edit" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Edit" PreviewMouseDown="TextBlock_PreviewMouseDown_1" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60" Background="#FF373776">
+                    <ListViewItem Height="60" Background="#FF780F0F" Selected="ListViewItem_Selected_2">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Check" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Find a Test" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Find a Test" PreviewMouseDown="TextBlock_PreviewMouseDown_2" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60" Background="#FF373776">
+                    <ListViewItem Height="60" Background="#FF780F0F" Selected="ListViewItem_Selected_3">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Men" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="View Profile" VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="Face" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="View Profile" PreviewMouseDown="TextBlock_PreviewMouseDown_3" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

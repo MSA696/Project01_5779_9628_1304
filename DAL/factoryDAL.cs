@@ -12,7 +12,7 @@ namespace DAL
 
         public static Idal DALGetInstance()
         {
-            return Dal_imp.GetInstance();
+            return Dal_to_xml.GetInstance();
         }
 
         /*protected static Dal_imp instance = null;

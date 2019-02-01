@@ -28,12 +28,17 @@ namespace PLWPF
 
         private void logIn_Click(object sender, RoutedEventArgs e)
         {
-            //trainee = bl.getTrainee(idBox.Text);
+            trainee = bl.findTrainee(Convert.ToInt32(idBox.Text));
             if (trainee.firstName == nameBox.Text)
             {
                 this.Visibility = Visibility.Collapsed;
-                new traineeShow().ShowDialog();
+                new traineeShow(trainee).ShowDialog();
             }
+        }
+
+        private void logIn_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

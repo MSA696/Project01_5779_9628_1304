@@ -70,6 +70,9 @@
     <Compile Include="adminIn.xaml.cs">
       <DependentUpon>adminIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="testAddr.xaml.cs">
+      <DependentUpon>testAddr.xaml</DependentUpon>
+    </Compile>
     <Compile Include="testerData.xaml.cs">
       <DependentUpon>testerData.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,9 @@
     </Compile>
     <Compile Include="testerIn.xaml.cs">
       <DependentUpon>testerIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="testerScore.xaml.cs">
+      <DependentUpon>testerScore.xaml</DependentUpon>
     </Compile>
     <Compile Include="testerShow.xaml.cs">
       <DependentUpon>testerShow.xaml</DependentUpon>
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="traineeIn.xaml.cs">
       <DependentUpon>traineeIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="traineeNotPass.xaml.cs">
+      <DependentUpon>traineeNotPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="traineePass.xaml.cs">
+      <DependentUpon>traineePass.xaml</DependentUpon>
     </Compile>
     <Compile Include="traineeShow.xaml.cs">
       <DependentUpon>traineeShow.xaml</DependentUpon>
@@ -114,6 +126,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="testAddr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="testerData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="testerIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="testerScore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +159,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="traineeIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="traineeNotPass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="traineePass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -178,9 +206,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\ralbad.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{f6d04677-1c44-4a20-9069-19b26a67c7e6}</Project>
       <Name>BE</Name>
@@ -198,6 +223,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\test drive.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\keys.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\checklist.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

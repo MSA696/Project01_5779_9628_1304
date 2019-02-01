@@ -37,7 +37,8 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"/>
                 <ColumnDefinition Width="25*"/>
-                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
@@ -50,23 +51,39 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="50*"/>
             </Grid.RowDefinitions>
-            <Label x:Name="testerNameShowLable" Content="First Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerNameShowLableB" Content="{Binding firsName}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerLastNameShowLable" Content="Last Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerLastNameShowLableB" Content="{Binding lastName}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerCareTypeShowLable" Content="Care Type" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerCareTypeShowLableB" Content="{Binding careType}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerGenderShowLable" Content="Gender" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerGenderShowLableB" Content="{Binding gender}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerPhoneShowLable" Content="Phone Number" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerPhoneShowLableB" Content="{Binding phone}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerBirthShowLable" Content="Date of Birth" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerBirthShowLableB" Content="{Binding birth}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerExperienceShowLable" Content="Experience" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="testerExperienceShowLableB" Content="{Binding experience}" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testData" Content="Your Test Details" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Grid.ColumnSpan="2"/>
+
+            <Label x:Name="testerNameShowLable" Content="First Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerNameShowLableB" Content="{Binding firstName}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerLastNameShowLable" Content="Last Name" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerLastNameShowLableB" Content="{Binding lastName}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerCareTypeShowLable" Content="Care Type" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerCareTypeShowLableB" Content="{Binding carType}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerGenderShowLable" Content="Gender" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerGenderShowLableB" Content="{Binding gender}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerPhoneShowLable" Content="Phone Number" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerPhoneShowLableB" Content="{Binding phone}" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerBirthShowLable" Content="Date of Birth" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerBirthShowLableB" Content="{Binding birth}" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerExperienceShowLable" Content="Experience" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="testerExperienceShowLableB" Content="{Binding experience}" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+
+            <Label x:Name="testFindDateLable" Content="Your Test Date" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="35"/>
+            <Label x:Name="testFindDateLableB" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="35"/>
+            <Label x:Name="testFindHourLable" Content="Test Hour" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="35"/>
+            <Label x:Name="testFindHourLableB" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="35"/>
 
         </Grid>
+        <Grid x:Name="helpGrid" Visibility="Collapsed" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.7">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="helpLable" Content="For technical support" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="56"/>
+            <Label x:Name="phoneHelpLable" Content="054-2189988" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80"/>
 
+        </Grid>
         <Grid x:Name="showGrid" Visibility="Visible" Height="540" Width="1020" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="Beige" Opacity="0.7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"/>
@@ -82,25 +99,30 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="50*"/>
             </Grid.RowDefinitions>
             <Label x:Name="firstNameShowLable" Content="First Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="firstNameShowLableB" Foreground="Black" Content="{Binding firstName}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
-            <Label x:Name="addressShowLable" Content="Adrress" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="addressShowLableB" Foreground="Black" Content="{Binding addr}" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="cityAddressShowLable" Content="City" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="cityAddressShowLableB" Foreground="Black" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="streetAddressShowLable" Content="Street" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="streetAddressShowLableB" Foreground="Black" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="buildingNumShowLable" Content="Building Number" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="buildingNumShowLableB" Foreground="Black" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
             <Label x:Name="lastNameShowLable" Content="Last Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="lastNameShowLableB" Foreground="Black" Content="{Binding lastName}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
-            <Label x:Name="careTypeShowLable" Content="Care Type" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="careTypeShowLableB" Foreground="Black" Content="{Binding carType}" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="careTypeShowLable" Content="Care Type" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="careTypeShowLableB" Foreground="Black" Content="{Binding carType}" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
             <Label x:Name="idShowLable" Content="ID" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="idShowLableB" Foreground="Black" Content="{Binding id}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
-            <Label x:Name="genderShowLable" Content="Gender" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <Label x:Name="genderShowLableB" Foreground="Black" Content="{Binding gender}" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="genderShowLable" Content="Gender" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="genderShowLableB" Foreground="Black" Content="{Binding gender}" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
 
             <Label x:Name="birthShowLable" Content="Date of Birth" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="birthShowLableB" Foreground="Black" Content="{Binding birth}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
@@ -135,59 +157,66 @@
                 <ColumnDefinition Width="25*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="50*"/>
             </Grid.RowDefinitions>
-            <Label x:Name="firstNameLable" Content="First Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="firstNameBox" Foreground="Black" Text="{Binding firstName}" BorderBrush="Black" Grid.Column="1" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150"  BorderThickness="1"/>
-            <Label x:Name="addressLable" Content="Adrress" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="addressBox" Foreground="Black" Text="{Binding adr}" BorderBrush="Black" Grid.Column="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150"  BorderThickness="1"/>
+            <Label x:Name="firstNameLable" Content="Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <Label x:Name="firstNameAddLable" Foreground="Black" Content="{Binding firstName, Mode=TwoWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="lastNameLable" Content="Last Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="lastNameBox" Foreground="Black" Text="{Binding lastName}" BorderBrush="Black" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Label x:Name="careTypeLable" Content="Car Type" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox x:Name="comboBoxCarType" Grid.Column="3" Grid.Row="1" Foreground="Black" SelectedIndex="{Binding carType}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="lastNameAddLable" Foreground="Black" Content="{Binding lastName, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="idLable" Content="ID" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="idBox" Foreground="Black" Text="{Binding id}" BorderBrush="Black" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Label x:Name="genderLable" Content="Gender" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox x:Name="comboBoxGender" Grid.Column="3" Grid.Row="2" SelectedIndex="{Binding gender}" Foreground="Black" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="idAddLable" Foreground="Black" Content="{Binding id, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
             <Label x:Name="birthLable" Content="Date of Birth" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <DatePicker Grid.Column="1" Foreground="Black" HorizontalAlignment="Center" SelectedDate="{Binding birth}" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="150" FontSize="18" BorderThickness="1"/>
-            <Label x:Name="teacherLable" Content="Teacher" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="teacherBox" Foreground="Black" Text="{Binding teacher}" BorderBrush="Black" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Label x:Name="phoneLable" Content="Phone Number" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="phoneBox" Foreground="Black" Text="{Binding phone}" BorderBrush="Black" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Label x:Name="gearLable" Content="Gear Type" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox x:Name="comboBoxGearType" Grid.Column="3" Foreground="Black" Grid.Row="5" SelectedIndex="{Binding gearBox}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Label x:Name="maxDisLable" Content="Max Distance" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="maxDisBox" Foreground="Black" Text="{Binding maxDis}" BorderBrush="Black" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Label x:Name="schoolNameLable" Content="School Name" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="schoolNameBox" Foreground="Black" Text="{Binding schoolName}" BorderBrush="Black" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Label x:Name="classNumLable" Content="Num of classes" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <TextBox x:Name="classNumBox" Foreground="Black" Text="{Binding classNum}" BorderBrush="Black" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
-            <Label x:Name="testDayLable" Content="Test Day" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox x:Name="comboBoxTestDay" Grid.Column="3" Foreground="Black" Grid.Row="6" SelectedIndex="{Binding testDey}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <DatePicker x:Name="birthDatePicker" Grid.Column="1" Foreground="Black" HorizontalAlignment="Center" SelectedDate="{Binding birth}" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="150" FontSize="18" BorderThickness="1"/>
+            <Label x:Name="genderLable" Content="Gender" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <ComboBox x:Name="comboBoxGender" Grid.Column="1" Grid.Row="4" SelectedItem="{Binding gender, Mode=TwoWay}" Foreground="Black" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="phoneLable" Content="Phone Number" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <TextBox x:Name="phoneBox" Foreground="Black" Text="{Binding phone, Mode=TwoWay}" BorderBrush="Black" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="maxDisLable" Content="Max Distance" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <TextBox x:Name="maxDisBox" Foreground="Black" Text="{Binding maxDis, Mode=TwoWay}" BorderBrush="Black" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
             <Label x:Name="testHourLable" Content="Test Hour" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
-            <ComboBox x:Name="comboBoxTestHour" Grid.Column="1" Foreground="Black" Grid.Row="7" SelectedIndex="{Binding testHour}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <ComboBox x:Name="comboBoxTestHour" Grid.Column="1" Foreground="Black" Grid.Row="7" SelectedItem="{Binding testHour, Mode=TwoWay}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="testDateLable" Content="Test Date" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <DatePicker x:Name="testDateComboBox" Grid.Column="1" Foreground="Black" SelectedDate="{Binding testDate}" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Height="30" Width="150" FontSize="18" BorderThickness="1"/>
 
-            <Button x:Name="saveTester" Content="Save" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Width="150" Height="60" FontSize="36" Click="saveTester_Click" Grid.RowSpan="2"/>
+            <Label x:Name="cityAddressLable" Content="City" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <TextBox x:Name="cityAddressBox" Foreground="Black" BorderBrush="Black" Grid.Column="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150"  BorderThickness="1"/>
+            <Label x:Name="streetAddressLable" Content="Street" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <TextBox x:Name="streetAddressBox" Foreground="Black" BorderBrush="Black" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150"  BorderThickness="1"/>
+            <Label x:Name="numAddressLable" Content="Building Number" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <TextBox x:Name="numAddressBox" Foreground="Black" BorderBrush="Black" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150"  BorderThickness="1"/>
+            <Label x:Name="careTypeLable" Content="Car Type" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <ComboBox x:Name="comboBoxCarType" Grid.Column="3" Grid.Row="3" Foreground="Black" SelectedItem="{Binding carType, Mode=TwoWay}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="schoolNameLable" Content="School Name" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <TextBox x:Name="schoolNameBox" Foreground="Black" Text="{Binding schoolName, Mode=TwoWay}" BorderBrush="Black" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="gearLable" Content="Gear Type" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <ComboBox x:Name="comboBoxGearType" Grid.Column="3" Foreground="Black" Grid.Row="5" SelectedItem="{Binding gearBox, Mode=TwoWay}" BorderBrush="Black" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="classNumLable" Content="Num of classes" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <TextBox x:Name="classNumBox" Foreground="Black" Text="{Binding classNum, Mode=TwoWay}" BorderBrush="Black" Grid.Column="3" Grid.Row="6" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+            <Label x:Name="teacherLable" Content="Teacher" Grid.Column="2" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"/>
+            <TextBox x:Name="teacherBox" Foreground="Black" Text="{Binding teacher, Mode=TwoWay}" BorderBrush="Black" Grid.Column="3" Grid.Row="7" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" BorderThickness="1"/>
+
+            <Button x:Name="saveTrainee" Content="Save" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="150" Height="60" FontSize="36" Click="saveTester_Click" Grid.RowSpan="3" Background="#FF000AE6"/>
+            <Button x:Name="deleteTrainee" Content="Delete" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="150" Height="60" FontSize="36" Click="deleteTester_Click" Grid.RowSpan="3" Background="#FF000AE6"/>
 
         </Grid>
-        <Grid Height="60" VerticalAlignment="Top" Background="#FF3A6BB2" >
-            <TextBlock Text="welcome Trainee" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
+        <Grid x:Name="menu" Height="60" VerticalAlignment="Top" Background="#FF3A6BB2" >
+            <TextBlock Text="{Binding firstName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Margin="450,15,400,15"/>
+            <TextBlock Text="welcome" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Margin="350,15,500,15"/>
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="bdika" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Account" VerticalAlignment="Center" FontSize="18"/>
                 <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignRightEdges"  StaysOpen="False">
                     <StackPanel Width="150">
-                        <Button Content="Account"/>
-                        <Button Content="Settings"/>
-                        <Button Content="Help"/>
+                        <Button Content="Contact us" Click="Help_Click"/>
                         <Separator/>
                         <Button x:Name="buttonLogOut" Content="Log Out" Click="buttonLogOut_Click"/>
                     </StackPanel>
@@ -217,16 +246,29 @@
                             <TextBlock Text="Edit" PreviewMouseDown="TextBlock_PreviewMouseDown_1" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
+                    <ListViewItem Height="60" Background="#FF373776" Selected="ListViewItem_Selected_4">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Map" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Your Test Address" PreviewMouseDown="TextBlock_PreviewMouseDown_4" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
                     <ListViewItem Height="60" Background="#FF373776" Selected="ListViewItem_Selected_2">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Check" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="FindInPage" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Find a Test" PreviewMouseDown="TextBlock_PreviewMouseDown_2" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
+
                     <ListViewItem Height="60" Background="#FF373776" Selected="ListViewItem_Selected_3">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Face" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="View Profile" PreviewMouseDown="TextBlock_PreviewMouseDown_3" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60" Background="#FF373776" Selected="ListViewItem_Selected_5">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Check" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Check Your Score" PreviewMouseDown="TextBlock_PreviewMouseDown_5" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

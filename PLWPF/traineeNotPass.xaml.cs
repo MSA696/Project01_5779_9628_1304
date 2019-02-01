@@ -15,28 +15,27 @@ using System.Windows.Shapes;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for testerIn.xaml
+    /// Interaction logic for traineeNotPass.xaml
     /// </summary>
-    public partial class testerIn : Window
+    public partial class traineeNotPass : Window
     {
-        BE.Tester tester;
+        BE.Trainee trainee;
         BL.IBL bl;
-
-        public testerIn()
+        public traineeNotPass()
         {
-            tester = new BE.Tester();
-            bl = BL.factoryBL.BLGetInstance();
             InitializeComponent();
+            bl = BL.factoryBL.BLGetInstance();
+        }
+        public traineeNotPass(BE.Trainee t)
+        {
+            InitializeComponent();
+            trainee = t;
         }
 
-        private void logIn_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
-            tester = bl.findTester(Convert.ToInt32(idBox.Text));
-            if (tester.firstName == nameBox.Text)
-            {
-                this.Visibility = Visibility.Collapsed;
-                new testerShow(tester).ShowDialog();
-            }
+            this.Visibility = Visibility.Collapsed;
+            new traineeShow(trainee).ShowDialog();
         }
     }
 }

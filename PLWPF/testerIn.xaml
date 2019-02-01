@@ -24,7 +24,7 @@
         <Label x:Name="id" Content="Id " HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" FontSize="26" />
         <TextBox x:Name="nameBox" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontSize="18"  BorderThickness="1" Background="Beige"/>
         <TextBox x:Name="idBox" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontSize="18"  BorderThickness="1" Background="Beige"/>
-        <Button x:Name="logIn" Content="log in" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="65" FontSize="12" Click="logIn_Click"/>
+        <Button x:Name="logIn" Content="log in" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="65" FontSize="12" Click="logIn_Click" BorderBrush="Black" Foreground="Black" Background="#FFFF0909"/>
     </Grid>
     
 </Window>

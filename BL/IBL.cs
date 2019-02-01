@@ -23,21 +23,29 @@ namespace BL
 
         void addTest(Test a);
         void updateTest(Test a); //not sure about the recive and returned parameters
-        bool dateTestAvailable(DateTime a);
+        bool dateTestAvailable(DateTime a, hours h, int id);
+        Test findTest(int id);
+        bool boolFindTest(int id);
+        Test getTestsToCheck();
+        bool boolGetTestsToCheck();
+        bool testPass(Test a);
+
 
         List<Tester> getTesters();
         List<Trainee> getTrainees();
         List<Test> getTests(); 
 
         List<Tester> TesterByDistance(address traineeAddr, int maxDis);
-        List<Tester> TesterByDateandtime(DateTime testDate, days testDay ,hours testHours , List<Tester> list);
-        Tester findTester(address traineeAddr, int maxDis, DateTime testDate, days testDay, hours testHours, car_Type carType);
-        bool TestByCondition(Delegate a);//<--!!didn't understand the demand "kol ha'mivhanim"
+        List<Tester> TesterByDateandtime(DateTime testDate, days testDay ,hours testHours, int id , List<Tester> list);
+        Tester findTester(address traineeAddr, int maxDis, DateTime testDate, days testDay, hours testHours, int id, car_Type carType);
+
+        List<Test> TestByCondition(Func<Test, bool> predicate = null);
         int checkDis(address a, address b);
 
         int traineeTestCount(Trainee a);
         bool traineeScore(Trainee a);
         List<Test> testSortList();  //do here sort of the list by DateAndTime of Tests
+        int compare(Test x, Test y);
         //next func are by Grouping method - we have an Exmple in main !
         //  List of Testers by specialization type
         //  List of Trainee by driving school

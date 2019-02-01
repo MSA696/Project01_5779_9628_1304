@@ -15,7 +15,7 @@ namespace BE
         public DateTime birth { get; set; }
         public _gender gender { get; set; }
         public string phone { get; set; }
-        public address addr { get; set; }
+        public address addr;
         public int experience { get; set; }
         public int maxTests { get; set; }
         public car_Type carType { get; set; }
@@ -24,7 +24,6 @@ namespace BE
         public int maxDist { get; set; }
         //another properties by demand
         public gear_Box gearBox { get; set; }
-        public List<Trainee> trainees { get; set; }
         override public string ToString()
         {
             return "";//assumption: returns any property of class as String

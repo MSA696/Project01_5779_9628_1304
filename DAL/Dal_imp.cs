@@ -45,6 +45,26 @@ namespace DAL
                 Console.WriteLine("The Test exist ");
             }
         }
+        public void addTestId(Test a, int id)
+        {
+            try
+            {
+                if (tests.Contains(a))
+                {
+                    throw new Exception();
+                }
+                if (id == 0)
+                {
+                    a.testId = Configuration.firstNum;
+                    Configuration.firstNum++;
+                }
+                tests.Add(a);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("The Test exist ");
+            }
+        }
 
         public void addTester(Tester a)
         {
@@ -81,13 +101,11 @@ namespace DAL
         public void deleteTester(Tester a)
         {
             testers.Remove(a);
-            //make sure id of removed tester is no longer exsit
         }
 
         public void deleteTrainee(Trainee a)
         {
             trainees.Remove(a);
-            //make sure id of removed trainee is no longer exsit
         }
 
         public List<Tester> getTesters()
@@ -140,6 +158,8 @@ namespace DAL
             }
             trainees[index] = a;
         }
+
+        
         #endregion
     }
 }
